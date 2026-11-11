@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-11",
+  "preserved": [
+    "Apresentação PlaceTech (3).pdf, p. 1: marca, cores e imagem tecnológica da capa",
+    "Apresentação PlaceTech (3).pdf, pp. 2-9: portfólio, diferenciais e contatos",
+    "docs/superpowers/specs/2026-11-11-placetech-landing-page-design.md: direção e critérios aprovados"
+  ],
+  "introduced": [
+    "index.html: página estática responsiva com estilos e controle de pausa do carrossel",
+    "assets/placetech-hero.webp: fotografia extraída da capa do PDF e otimizada para a página",
+    "assets/client-logos/: seis logos extraídos da última página do PDF",
+    "assets/placetech-mark.webp: s?mbolo original PlaceTech extra?do da capa do PDF, com transpar?ncia para o wordmark"
+  ],
+  "material": {
+    "real": [
+      "Marca PlaceTech",
+      "São Paulo/SP",
+      "telefone, e-mail, Instagram",
+      "seis grupos de soluções",
+      "diferenciais",
+      "seis clientes citados no PDF"
+    ],
+    "pictures": [
+      "Imagem da capa do PDF no hero",
+      "Seis logos de clientes extraídos do PDF"
+    ],
+    "absent": [
+      "Métricas",
+      "depoimentos",
+      "preços"
+    ]
+  },
+  "direction": {
+    "shape": "Marquee Hero",
+    "genre": "modern-minimal",
+    "theme": "Vantage, deal 2/3; palette adapted to PlaceTech orange",
+    "job": "hire",
+    "draw": "277d792e",
+    "signature": "Imagem tecnológica original da capa do PDF",
+    "deviations": [
+      "O draw propôs exibir preço; não há preços no PDF, então a hero leva a um contato consultivo."
+    ]
+  }
+}

@@ -17,6 +17,20 @@ test("has a responsive Portuguese page with navigable sections", () => {
   }
 });
 
+test("alternates dark and light backgrounds across the main sections", () => {
+  const sections = [...html.matchAll(/<section\b([^>]*)>/g)].map(([, attributes]) => ({
+    id: attributes.match(/\bid="([^"]+)"/)?.[1],
+    light: /\bclass="[^"]*\blight-section\b/.test(attributes),
+  }));
+  assert.deepEqual(sections, [
+    { id: "inicio", light: false },
+    { id: "solucoes", light: true },
+    { id: "empresa", light: false },
+    { id: "clientes", light: true },
+    { id: "contato", light: false },
+  ]);
+});
+
 test("uses the contact details and WhatsApp number from the presentation", () => {
   assert.match(html, /https:\/\/wa\.me\/5511915971190/);
   assert.match(html, /tel:\+5511915971190/);

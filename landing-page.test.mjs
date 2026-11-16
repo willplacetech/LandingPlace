@@ -76,6 +76,15 @@ test("keeps the client loop infinite with reduced motion enabled", () => {
   assert.doesNotMatch(html, /matchMedia\("\(prefers-reduced-motion: reduce\)"\)/);
 });
 
+test("preloads and distributes client logos across wide viewports before animation", () => {
+  for (const client of ["andritz", "palmeiras", "engemon", "renault-brasil", "ampm", "santos-fc"]) {
+    assert.match(html, new RegExp(`<link rel="preload" as="image" href="assets/client-logos/${client}\\.webp">`));
+  }
+  assert.match(html, /\.client-carousel\.is-running \.client-list\s*\{[^}]*min-width:\s*100vw;[^}]*justify-content:\s*space-around;/);
+  assert.doesNotMatch(html, /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.client-list\s*\{[^}]*width:\s*100%;/);
+  assert.match(html, /Promise\.all\(clientImages\.map\(waitForImage\)\)\s*\.then\(\(\)\s*=>\s*carousel\.classList\.add\("is-running"\)\)/);
+});
+
 test("keeps reduced-motion styles and the page self-contained", () => {
   assert.match(html, /prefers-reduced-motion:\s*reduce/);
   assert.match(html, /:focus-visible/);

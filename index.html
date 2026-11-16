@@ -6,6 +6,12 @@
   <meta name="theme-color" content="#101113">
   <meta name="description" content="Soluções em tecnologia para empresas. Conheça a PlaceTech e fale com nossa equipe em São Paulo.">
   <title>PlaceTech | Soluções em tecnologia</title>
+  <link rel="preload" as="image" href="assets/client-logos/andritz.webp">
+  <link rel="preload" as="image" href="assets/client-logos/palmeiras.webp">
+  <link rel="preload" as="image" href="assets/client-logos/engemon.webp">
+  <link rel="preload" as="image" href="assets/client-logos/renault-brasil.webp">
+  <link rel="preload" as="image" href="assets/client-logos/ampm.webp">
+  <link rel="preload" as="image" href="assets/client-logos/santos-fc.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -471,6 +477,8 @@
 
     .client-carousel.is-running .client-list {
       flex-wrap: nowrap;
+      min-width: 100vw;
+      justify-content: space-around;
       padding: 16px clamp(32px, 6vw, 80px) 24px 0;
     }
 
@@ -735,7 +743,6 @@
       }
 
       .client-list {
-        width: 100%;
         flex-wrap: wrap;
         justify-content: center;
         gap: 20px;
@@ -897,7 +904,29 @@
   </footer>
   <script>
     const carousel = document.querySelector(".client-carousel");
-    carousel.classList.add("is-running");
+    const clientImages = [...carousel.querySelectorAll('.client-list:not([aria-hidden="true"]) img')];
+    const waitForImage = (image) => {
+      if (image.complete) {
+        return image.naturalWidth > 0
+          ? typeof image.decode === "function" ? image.decode() : Promise.resolve()
+          : Promise.reject(new Error(`Unable to load client logo: ${image.src}`));
+      }
+
+      return new Promise((resolve, reject) => {
+        image.addEventListener("load", () => {
+          if (typeof image.decode === "function") {
+            image.decode().then(resolve, reject);
+          } else {
+            resolve();
+          }
+        }, { once: true });
+        image.addEventListener("error", () => reject(new Error(`Unable to load client logo: ${image.src}`)), { once: true });
+      });
+    };
+
+    Promise.all(clientImages.map(waitForImage))
+      .then(() => carousel.classList.add("is-running"))
+      .catch((error) => console.error("Client carousel logos could not be loaded.", error));
   </script>
 </body>
 </html>

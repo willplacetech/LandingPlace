@@ -55,16 +55,21 @@ test("keeps navigation links visible and wrapping on small screens", () => {
 test("shows all six PDF client logos in an accessible automatic loop", () => {
   assert.match(html, /class="client-carousel"[^>]*aria-label="Clientes PlaceTech"/);
   assert.match(html, /@keyframes client-loop/);
-  assert.match(html, /\.client-carousel\.is-running \.client-track[\s\S]*?animation:\s*client-loop/);
+  assert.match(html, /\.client-carousel\.is-running \.client-track[\s\S]*?animation:\s*client-loop\s+36s\s+linear\s+infinite/);
   assert.match(html, /aria-hidden="true"[\s\S]*?client-logos/);
   assert.match(html, /prefers-reduced-motion:\s*reduce[\s\S]*?client-track[\s\S]*?animation:\s*none/);
-  assert.match(html, /pauseButton\.addEventListener\("click"/);
-  assert.match(html, /pauseButton\.hidden = false/);
+  assert.doesNotMatch(html, /carousel-toggle|is-paused|animation-play-state:\s*paused/);
   assert.doesNotMatch(html, /<img src="assets\/client-logos\/[^"]+"[^>]*loading="lazy"/);
   for (const client of ["andritz", "palmeiras", "engemon", "renault-brasil", "ampm", "santos-fc"]) {
     assert.ok(html.includes(`${client}.webp`), `missing client logo: ${client}`);
     assert.ok(existsSync(new URL(`./assets/client-logos/${client}.webp`, import.meta.url)), `missing logo file: ${client}`);
   }
+});
+
+test("keeps the clients heading constrained while the carousel spans the section", () => {
+  const section = html.match(/<section\b(?=[^>]*\bid="clientes")[^>]*>([\s\S]*?)<\/section>/)?.[1] ?? "";
+  assert.match(section, /<\/div>\s*<div class="client-carousel"/);
+  assert.match(html, /\.client-carousel\s*\{[^}]*width:\s*100%;/);
 });
 
 test("keeps motion optional and the page self-contained", () => {

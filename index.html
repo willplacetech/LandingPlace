@@ -411,6 +411,7 @@
     }
 
     .client-carousel {
+      width: 100%;
       overflow-x: clip;
     }
 
@@ -448,12 +449,6 @@
       text-align: center;
     }
 
-    .client-controls {
-      display: flex;
-      justify-content: flex-end;
-      padding-top: 12px;
-    }
-
     .client-logo img {
       width: auto;
       max-width: 145px;
@@ -480,39 +475,6 @@
 
     .client-carousel.is-running .client-list[aria-hidden="true"] {
       display: flex;
-    }
-
-    .client-carousel.is-running:hover:not(.is-paused) .client-track {
-      animation-play-state: paused;
-    }
-
-    .carousel-toggle {
-      display: none;
-      padding: 8px 0;
-      border: 0;
-      background: transparent;
-      color: var(--ink-soft);
-      cursor: pointer;
-      font-family: var(--font-body);
-      font-size: 13px;
-      transition: color 160ms var(--ease-out);
-    }
-
-    .carousel-toggle:hover {
-      color: var(--orange);
-    }
-
-    .carousel-toggle:disabled {
-      color: var(--muted);
-      cursor: not-allowed;
-    }
-
-    .client-carousel.is-paused .client-track {
-      animation-play-state: paused;
-    }
-
-    .client-carousel.is-running .carousel-toggle {
-      display: inline-flex;
     }
 
     @keyframes client-loop {
@@ -779,8 +741,7 @@
         padding: 0;
       }
 
-      .client-list[aria-hidden="true"],
-      .carousel-toggle {
+      .client-list[aria-hidden="true"] {
         display: none;
       }
     }
@@ -878,28 +839,25 @@
           <h2 id="clients-title">Empresas que confiam na PlaceTech.</h2>
           <p>Marcas apresentadas no portfólio da PlaceTech.</p>
         </div>
-        <div class="client-carousel" role="region" aria-roledescription="carrossel" aria-label="Clientes PlaceTech">
-          <div class="client-track">
-            <ul class="client-list" aria-label="Logos de clientes">
-              <li class="client-logo"><img src="assets/client-logos/andritz.webp" alt="" width="209" height="46"><span class="client-name">Andritz</span></li>
-              <li class="client-logo"><img src="assets/client-logos/palmeiras.webp" alt="" width="106" height="99"><span class="client-name">Palmeiras</span></li>
-              <li class="client-logo"><img src="assets/client-logos/engemon.webp" alt="" width="80" height="87"><span class="client-name">Engemon</span></li>
-              <li class="client-logo"><img src="assets/client-logos/renault-brasil.webp" alt="" width="75" height="100"><span class="client-name">Renault Brasil</span></li>
-              <li class="client-logo"><img src="assets/client-logos/ampm.webp" alt="" width="252" height="71"><span class="client-name">ampm</span></li>
-              <li class="client-logo"><img src="assets/client-logos/santos-fc.webp" alt="" width="107" height="113"><span class="client-name">Santos FC</span></li>
-            </ul>
-            <ul class="client-list" aria-hidden="true">
-              <li class="client-logo"><img src="assets/client-logos/andritz.webp" alt="" width="209" height="46"><span class="client-name">Andritz</span></li>
-              <li class="client-logo"><img src="assets/client-logos/palmeiras.webp" alt="" width="106" height="99"><span class="client-name">Palmeiras</span></li>
-              <li class="client-logo"><img src="assets/client-logos/engemon.webp" alt="" width="80" height="87"><span class="client-name">Engemon</span></li>
-              <li class="client-logo"><img src="assets/client-logos/renault-brasil.webp" alt="" width="75" height="100"><span class="client-name">Renault Brasil</span></li>
-              <li class="client-logo"><img src="assets/client-logos/ampm.webp" alt="" width="252" height="71"><span class="client-name">ampm</span></li>
-              <li class="client-logo"><img src="assets/client-logos/santos-fc.webp" alt="" width="107" height="113"><span class="client-name">Santos FC</span></li>
-            </ul>
-          </div>
-          <div class="client-controls">
-            <button class="carousel-toggle" type="button" aria-pressed="false" hidden>Pausar carrossel</button>
-          </div>
+      </div>
+      <div class="client-carousel" role="region" aria-roledescription="carrossel" aria-label="Clientes PlaceTech">
+        <div class="client-track">
+          <ul class="client-list" aria-label="Logos de clientes">
+            <li class="client-logo"><img src="assets/client-logos/andritz.webp" alt="" width="209" height="46"><span class="client-name">Andritz</span></li>
+            <li class="client-logo"><img src="assets/client-logos/palmeiras.webp" alt="" width="106" height="99"><span class="client-name">Palmeiras</span></li>
+            <li class="client-logo"><img src="assets/client-logos/engemon.webp" alt="" width="80" height="87"><span class="client-name">Engemon</span></li>
+            <li class="client-logo"><img src="assets/client-logos/renault-brasil.webp" alt="" width="75" height="100"><span class="client-name">Renault Brasil</span></li>
+            <li class="client-logo"><img src="assets/client-logos/ampm.webp" alt="" width="252" height="71"><span class="client-name">ampm</span></li>
+            <li class="client-logo"><img src="assets/client-logos/santos-fc.webp" alt="" width="107" height="113"><span class="client-name">Santos FC</span></li>
+          </ul>
+          <ul class="client-list" aria-hidden="true">
+            <li class="client-logo"><img src="assets/client-logos/andritz.webp" alt="" width="209" height="46"><span class="client-name">Andritz</span></li>
+            <li class="client-logo"><img src="assets/client-logos/palmeiras.webp" alt="" width="106" height="99"><span class="client-name">Palmeiras</span></li>
+            <li class="client-logo"><img src="assets/client-logos/engemon.webp" alt="" width="80" height="87"><span class="client-name">Engemon</span></li>
+            <li class="client-logo"><img src="assets/client-logos/renault-brasil.webp" alt="" width="75" height="100"><span class="client-name">Renault Brasil</span></li>
+            <li class="client-logo"><img src="assets/client-logos/ampm.webp" alt="" width="252" height="71"><span class="client-name">ampm</span></li>
+            <li class="client-logo"><img src="assets/client-logos/santos-fc.webp" alt="" width="107" height="113"><span class="client-name">Santos FC</span></li>
+          </ul>
         </div>
       </div>
     </section>
@@ -938,16 +896,9 @@
   </footer>
   <script>
     const carousel = document.querySelector(".client-carousel");
-    const pauseButton = carousel.querySelector(".carousel-toggle");
 
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       carousel.classList.add("is-running");
-      pauseButton.hidden = false;
-      pauseButton.addEventListener("click", () => {
-        const paused = carousel.classList.toggle("is-paused");
-        pauseButton.setAttribute("aria-pressed", String(paused));
-        pauseButton.textContent = paused ? "Retomar carrossel" : "Pausar carrossel";
-      });
     }
   </script>
 </body>

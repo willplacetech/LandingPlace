@@ -57,7 +57,6 @@ test("shows all six PDF client logos in an accessible automatic loop", () => {
   assert.match(html, /@keyframes client-loop/);
   assert.match(html, /\.client-carousel\.is-running \.client-track[\s\S]*?animation:\s*client-loop\s+36s\s+linear\s+infinite/);
   assert.match(html, /aria-hidden="true"[\s\S]*?client-logos/);
-  assert.match(html, /prefers-reduced-motion:\s*reduce[\s\S]*?client-track[\s\S]*?animation:\s*none/);
   assert.doesNotMatch(html, /carousel-toggle|is-paused|animation-play-state:\s*paused/);
   assert.doesNotMatch(html, /<img src="assets\/client-logos\/[^"]+"[^>]*loading="lazy"/);
   for (const client of ["andritz", "palmeiras", "engemon", "renault-brasil", "ampm", "santos-fc"]) {
@@ -72,7 +71,12 @@ test("keeps the clients heading constrained while the carousel spans the section
   assert.match(html, /\.client-carousel\s*\{[^}]*width:\s*100%;/);
 });
 
-test("keeps motion optional and the page self-contained", () => {
+test("keeps the client loop infinite with reduced motion enabled", () => {
+  assert.match(html, /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.client-carousel\.is-running \.client-track\s*\{[^}]*animation-duration:\s*36s\s*!important;[^}]*animation-iteration-count:\s*infinite\s*!important;/);
+  assert.doesNotMatch(html, /matchMedia\("\(prefers-reduced-motion: reduce\)"\)/);
+});
+
+test("keeps reduced-motion styles and the page self-contained", () => {
   assert.match(html, /prefers-reduced-motion:\s*reduce/);
   assert.match(html, /:focus-visible/);
   assert.doesNotMatch(html, /<script[^>]+src=/i);

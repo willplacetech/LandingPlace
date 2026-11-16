@@ -412,6 +412,7 @@
 
     .client-carousel {
       width: 100%;
+      overflow-x: hidden;
       overflow-x: clip;
     }
 
@@ -722,15 +723,15 @@
         transition-duration: 0.01ms !important;
       }
 
-      .client-carousel {
-        overflow: visible;
-      }
-
       .client-track {
         width: 100%;
         flex-direction: column;
         gap: 12px;
-        animation: none;
+      }
+
+      .client-carousel.is-running .client-track {
+        animation-duration: 36s !important;
+        animation-iteration-count: infinite !important;
       }
 
       .client-list {
@@ -896,10 +897,7 @@
   </footer>
   <script>
     const carousel = document.querySelector(".client-carousel");
-
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      carousel.classList.add("is-running");
-    }
+    carousel.classList.add("is-running");
   </script>
 </body>
 </html>

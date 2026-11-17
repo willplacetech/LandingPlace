@@ -1,932 +1,1722 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101113">
-  <meta name="description" content="Soluções em tecnologia para empresas. Conheça a PlaceTech e fale com nossa equipe em São Paulo.">
-  <title>PlaceTech | Soluções em tecnologia</title>
-  <link rel="preload" as="image" href="assets/client-logos/andritz.webp">
-  <link rel="preload" as="image" href="assets/client-logos/palmeiras.webp">
-  <link rel="preload" as="image" href="assets/client-logos/engemon.webp">
-  <link rel="preload" as="image" href="assets/client-logos/renault-brasil.webp">
-  <link rel="preload" as="image" href="assets/client-logos/ampm.webp">
-  <link rel="preload" as="image" href="assets/client-logos/santos-fc.webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    /* Hallmark · shape: Marquee Hero · genre: modern-minimal · theme: Vantage (deal 2/3, seed placetech-portfolio-technology-solutions-bd23·277d792e·2026-11-11·r0) · job: hire · draw: 277d792e
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101113" />
+    <meta
+      name="description"
+      content="Soluções em tecnologia para empresas. Conheça a PlaceTech e fale com nossa equipe em São Paulo."
+    />
+    <title>PlaceTech | Soluções em tecnologia</title>
+    <link rel="preload" as="image" href="assets/client-logos/andritz.webp" />
+    <link rel="preload" as="image" href="assets/client-logos/palmeiras.webp" />
+    <link rel="preload" as="image" href="assets/client-logos/engemon.webp" />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/client-logos/renault-brasil.webp"
+    />
+    <link rel="preload" as="image" href="assets/client-logos/ampm.webp" />
+    <link rel="preload" as="image" href="assets/client-logos/santos-fc.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Hallmark · shape: Marquee Hero · genre: modern-minimal · theme: Vantage (deal 2/3, seed placetech-portfolio-technology-solutions-bd23·277d792e·2026-11-11·r0) · job: hire · draw: 277d792e
      * hero: Corridor · nav: edge-aligned · footer: colophon block · imagery: photograph from supplied PDF · signature: PlaceTech's original technology cover image · vantage: terrain/steel; brand-orange override
      * axes: dark/grotesk-sans/chromatic-lime · posture: restrained with orange signal · contrast: pass · fold: pass · v2.0.0 */
-    /* Hallmark · pre-emit critique: P4 H5 E4 S5 R5 V4 · weakest: E, use native navigation and contact links instead of extra interaction code */
-    :root {
-      color-scheme: dark;
-      --surface: oklch(13.5% 0.012 235);
-      --surface-raised: oklch(17% 0.014 235);
-      --surface-hover: oklch(20% 0.016 235);
-      --ink: oklch(95% 0.006 230);
-      --ink-soft: oklch(82% 0.012 230);
-      --muted: oklch(68% 0.014 230);
-      --rule: oklch(29% 0.014 235);
-      --rule-strong: oklch(38% 0.016 235);
-      --orange: oklch(78% 0.17 58);
-      --orange-hover: oklch(83% 0.17 58);
-      --orange-action: oklch(78% 0.17 58);
-      --orange-action-hover: oklch(83% 0.17 58);
-      --orange-ink: oklch(17% 0.018 55);
-      --focus: oklch(82% 0.17 58);
-      --font-display: "Geologica", "Trebuchet MS", sans-serif;
-      --font-body: "Geologica", "Trebuchet MS", sans-serif;
-      --content-width: 1200px;
-      --page-gutter: clamp(20px, 5vw, 72px);
-      --radius: 8px;
-      --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    html {
-      overflow-x: clip;
-      scroll-behavior: smooth;
-      scroll-padding-top: 88px;
-      background: var(--surface);
-    }
-
-    body {
-      min-width: 320px;
-      margin: 0;
-      overflow-x: clip;
-      background: var(--surface);
-      color: var(--ink);
-      font-family: var(--font-body);
-      font-size: 16px;
-      font-weight: 300;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    a:focus-visible,
-    summary:focus-visible,
-    button:focus-visible {
-      outline: 2px solid var(--focus);
-      outline-offset: 4px;
-      transition: none;
-    }
-
-    a:active,
-    summary:active,
-    button:active {
-      color: var(--orange);
-    }
-
-    img,
-    svg {
-      display: block;
-    }
-
-    img {
-      max-width: 100%;
-    }
-
-    h1,
-    h2,
-    h3,
-    p {
-      margin: 0;
-    }
-
-    h1,
-    h2,
-    h3 {
-      min-width: 0;
-      overflow-wrap: break-word;
-      color: var(--ink);
-      font-family: var(--font-display);
-      font-weight: 400;
-      line-height: 1.08;
-    }
-
-    .container {
-      width: min(calc(100% - var(--page-gutter) * 2), var(--content-width));
-      margin-inline: auto;
-    }
-
-    .skip-link {
-      position: absolute;
-      z-index: 20;
-      top: 12px;
-      left: 12px;
-      padding: 12px 16px;
-      transform: translateY(-160%);
-      border-radius: var(--radius);
-      background: var(--orange-action);
-      color: var(--orange-ink);
-      font-weight: 500;
-    }
-
-    .skip-link:focus {
-      transform: translateY(0);
-    }
-
-    .site-header {
-      position: sticky;
-      z-index: 10;
-      top: 0;
-      border-bottom: 1px solid var(--rule);
-      background: var(--surface);
-    }
-
-    .header-inner {
-      display: flex;
-      min-height: 78px;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .wordmark {
-      display: inline-flex;
-      align-items: center;
-      flex: 0 0 auto;
-      color: var(--ink);
-      font-family: var(--font-display);
-      font-size: 25px;
-      font-weight: 500;
-      letter-spacing: -0.07em;
-      line-height: 1;
-    }
-
-    .brand-mark {
-      width: 25px;
-      height: 29px;
-      margin-right: 8px;
-      object-fit: contain;
-    }
-
-    .wordmark strong {
-      color: var(--orange);
-      font-weight: 500;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: clamp(16px, 3vw, 40px);
-      margin-left: auto;
-    }
-
-    .nav-links > a:not(.button) {
-      color: var(--ink-soft);
-      font-size: 14px;
-      transition: color 160ms var(--ease-out);
-    }
-
-    .nav-links > a:not(.button):hover {
-      color: var(--orange);
-    }
-
-    .button {
-      display: inline-flex;
-      min-height: 48px;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: 0 20px;
-      border: 1px solid transparent;
-      border-radius: 999px;
-      background: var(--orange);
-      color: var(--orange-ink);
-      font-family: var(--font-body);
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 1.2;
-      transition: background-color 160ms var(--ease-out), transform 180ms var(--ease-out);
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-      background: var(--orange-action-hover);
-    }
-
-    .button svg {
-      width: 16px;
-      height: 16px;
-      flex: 0 0 auto;
-    }
-
-    .button-secondary {
-      border-color: var(--rule-strong);
-      background: transparent;
-      color: var(--ink);
-    }
-
-    .button-secondary:hover {
-      border-color: var(--ink-soft);
-      background: var(--surface-hover);
-    }
-
-    .hero {
-      display: grid;
-      min-height: min(730px, calc(100svh - 79px));
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      align-items: center;
-      gap: clamp(36px, 6vw, 88px);
-      padding-block: clamp(64px, 10vh, 120px);
-    }
-
-    .hero-copy {
-      position: relative;
-      z-index: 1;
-      animation: arrive 650ms var(--ease-out) both;
-    }
-
-    .hero h1 {
-      max-width: 660px;
-      font-size: clamp(42px, 5.2vw, 70px);
-      letter-spacing: -0.065em;
-      line-height: 1.02;
-    }
-
-    .hero-copy > p {
-      max-width: 46ch;
-      margin-top: 24px;
-      color: var(--ink-soft);
-      font-size: clamp(16px, 1.5vw, 19px);
-      line-height: 1.55;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 32px;
-    }
-
-    .hero-visual {
-      position: relative;
-      min-width: 0;
-      color: var(--ink);
-      animation: arrive 800ms 90ms var(--ease-out) both;
-    }
-
-    .hero-visual img {
-      width: 100%;
-      min-height: 350px;
-      max-height: 520px;
-      aspect-ratio: 1.15;
-      border: 1px solid var(--rule);
-      border-radius: var(--radius);
-      background: var(--surface-raised);
-      color: var(--ink);
-      object-fit: cover;
-      object-position: 65% center;
-    }
-
-    .section {
-      padding-block: clamp(88px, 12vw, 152px);
-      border-top: 1px solid var(--rule);
-    }
-
-    .section.light-section {
-      --surface: #fff;
-      --surface-raised: #f7f7f5;
-      --surface-hover: #eeeeec;
-      --ink: #17191b;
-      --ink-soft: #3c4145;
-      --muted: #555b60;
-      --rule: #dedfdf;
-      --rule-strong: #b7bbbd;
-      --orange: #a84c00;
-      --orange-hover: #873e00;
-      --focus: #873e00;
-      background: var(--surface);
-      color: var(--ink);
-    }
-
-    .section-heading {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr);
-      align-items: end;
-      gap: 32px;
-      margin-bottom: 48px;
-    }
-
-    .section-heading h2 {
-      max-width: 680px;
-      font-size: clamp(34px, 4vw, 52px);
-      letter-spacing: -0.055em;
-      text-wrap: balance;
-    }
-
-    .section-heading p {
-      max-width: 54ch;
-      color: var(--muted);
-      font-size: 16px;
-    }
-
-    .solution-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .solution {
-      display: flex;
-      min-height: 250px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 24px;
-      padding: clamp(24px, 2.5vw, 32px);
-      border: 1px solid var(--rule);
-      border-radius: var(--radius);
-      background: var(--surface-raised);
-      text-align: center;
-      transition: border-color 180ms var(--ease-out), background-color 180ms var(--ease-out), transform 180ms var(--ease-out);
-    }
-
-    .solution:hover {
-      transform: translateY(-3px);
-      border-color: var(--rule-strong);
-      background: var(--surface-hover);
-    }
-
-    .solution h3 {
-      font-size: 21px;
-      letter-spacing: -0.035em;
-    }
-
-    .solution p {
-      max-width: 50ch;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.65;
-    }
-
-    .about-section {
-      background: var(--surface-raised);
-      color: var(--ink);
-    }
-
-    .about-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
-      gap: clamp(48px, 9vw, 128px);
-      align-items: start;
-    }
-
-    .about-copy h2,
-    .contact-copy h2 {
-      font-size: clamp(36px, 4.5vw, 58px);
-      letter-spacing: -0.06em;
-      text-wrap: balance;
-    }
-
-    .about-copy > p {
-      max-width: 54ch;
-      margin-top: 24px;
-      color: var(--ink-soft);
-      font-size: 17px;
-    }
-
-    .about-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .about-list li {
-      padding: 20px 0;
-      border-top: 1px solid var(--rule-strong);
-      color: var(--ink-soft);
-      font-size: 16px;
-    }
-
-    .about-list li:last-child {
-      border-bottom: 1px solid var(--rule-strong);
-    }
-
-    .client-carousel {
-      width: 100%;
-      overflow-x: hidden;
-      overflow-x: clip;
-    }
-
-    .client-track {
-      display: flex;
-      width: 100%;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .client-list {
-      display: flex;
-      flex: 0 0 auto;
-      align-items: center;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: clamp(32px, 6vw, 80px);
-      margin: 0;
-      padding: 16px 0 24px;
-      list-style: none;
-    }
-
-    .client-list[aria-hidden="true"] {
-      display: none;
-    }
-
-    .client-logo {
-      display: grid;
-      width: 160px;
-      min-height: 128px;
-      align-content: center;
-      justify-items: center;
-      gap: 12px;
-      color: var(--ink-soft);
-      text-align: center;
-    }
-
-    .client-logo img {
-      width: auto;
-      max-width: 145px;
-      height: auto;
-      max-height: 72px;
-      object-fit: contain;
-    }
-
-    .client-name {
-      font-size: 14px;
-      line-height: 1.4;
-    }
-
-    .client-carousel.is-running .client-track {
-      width: max-content;
-      flex-direction: row;
-      animation: client-loop 36s linear infinite;
-    }
-
-    .client-carousel.is-running .client-list {
-      flex-wrap: nowrap;
-      min-width: 100vw;
-      justify-content: space-around;
-      padding: 16px clamp(32px, 6vw, 80px) 24px 0;
-    }
-
-    .client-carousel.is-running .client-list[aria-hidden="true"] {
-      display: flex;
-    }
-
-    @keyframes client-loop {
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    .contact-section {
-      padding-block: clamp(88px, 11vw, 136px);
-      border-top: 1px solid var(--rule);
-      background: var(--surface-raised);
-      color: var(--ink);
-    }
-
-    .contact-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      align-items: end;
-      gap: 36px;
-    }
-
-    .contact-copy h2 {
-      max-width: 700px;
-    }
-
-    .contact-copy p {
-      margin-top: 20px;
-      color: var(--ink-soft);
-    }
-
-    .contact-details {
-      display: grid;
-      gap: 12px;
-      justify-items: start;
-      padding-bottom: 4px;
-    }
-
-    .contact-details a,
-    .footer-links a {
-      color: var(--ink-soft);
-      font-size: 14px;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 4px;
-      transition: color 160ms var(--ease-out);
-    }
-
-    .contact-details a:hover,
-    .footer-links a:hover {
-      color: var(--orange);
-      text-decoration-line: underline;
-    }
-
-    .site-footer {
-      padding-block: 32px;
-      border-top: 1px solid var(--rule);
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .footer-note {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
-
-    .footer-links a {
-      font-size: 13px;
-    }
-
-    @keyframes arrive {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 860px) {
-      .hero {
-        min-height: auto;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
-        gap: 32px;
-      }
-
-      .hero h1 {
-        font-size: clamp(40px, 6vw, 58px);
-      }
-
-      .solution-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .about-layout {
-        gap: 48px;
-      }
-
-      .contact-layout {
-        grid-template-columns: minmax(0, 1fr);
-        align-items: start;
-      }
-    }
-
-    @media (max-width: 680px) {
+      /* Hallmark · pre-emit critique: P4 H5 E4 S5 R5 V4 · weakest: E, use native navigation and contact links instead of extra interaction code */
       :root {
-        --page-gutter: 22px;
-      }
-
-      .header-inner {
-        min-height: 70px;
-        flex-wrap: wrap;
-        gap: 0 16px;
-        padding-block: 16px;
-      }
-
-      .wordmark {
-        font-size: 23px;
-      }
-
-      .nav-links {
-        width: 100%;
-        flex: 1 1 100%;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 8px 12px;
-        margin-left: 0;
-        padding-top: 12px;
-      }
-
-      .nav-links > a:not(.button) {
-        padding-block: 4px;
-      }
-
-      .nav-links .button {
-        min-height: 40px;
-        margin-left: auto;
-      }
-
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 32px;
-        padding-block: 64px 80px;
-      }
-
-      .hero h1 {
-        max-width: 560px;
-        font-size: clamp(42px, 11vw, 60px);
-      }
-
-      .hero-copy > p {
-        margin-top: 20px;
-      }
-
-      .hero-actions {
-        gap: 12px;
-        margin-top: 24px;
-      }
-
-      .button {
-        min-height: 46px;
-        padding-inline: 16px;
-        font-size: 13px;
-      }
-
-      .hero-visual img {
-        min-height: 260px;
-        max-height: 400px;
-        aspect-ratio: 1.25;
-      }
-
-      .section {
-        padding-block: 84px;
-      }
-
-      .section-heading,
-      .about-layout {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 20px;
-        margin-bottom: 32px;
-      }
-
-      .about-layout {
-        gap: 40px;
-      }
-
-      .section-heading h2 {
-        font-size: clamp(36px, 9vw, 48px);
-      }
-
-      .solution-grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 12px;
-      }
-
-      .solution {
-        min-height: auto;
-        padding: 24px;
-      }
-
-      .client-list {
-        gap: 24px;
-        padding-right: 24px;
-      }
-
-      .client-logo {
-        width: 136px;
-      }
-
-      .contact-section {
-        padding-block: 84px;
-      }
-
-      .footer-inner {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 16px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
+        color-scheme: dark;
+        --surface: oklch(13.5% 0.012 235);
+        --surface-raised: oklch(17% 0.014 235);
+        --surface-hover: oklch(20% 0.016 235);
+        --ink: oklch(95% 0.006 230);
+        --ink-soft: oklch(82% 0.012 230);
+        --muted: oklch(68% 0.014 230);
+        --rule: oklch(29% 0.014 235);
+        --rule-strong: oklch(38% 0.016 235);
+        --orange: oklch(78% 0.17 58);
+        --orange-hover: oklch(83% 0.17 58);
+        --orange-action: oklch(78% 0.17 58);
+        --orange-action-hover: oklch(83% 0.17 58);
+        --orange-ink: oklch(17% 0.018 55);
+        --focus: oklch(82% 0.17 58);
+        --font-display: 'Geologica', 'Trebuchet MS', sans-serif;
+        --font-body: 'Geologica', 'Trebuchet MS', sans-serif;
+        --content-width: 1200px;
+        --page-gutter: clamp(20px, 5vw, 72px);
+        --radius: 8px;
+        --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
       }
 
       *,
       *::before,
       *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
+        box-sizing: border-box;
+      }
+
+      html {
+        overflow-x: clip;
+        scroll-behavior: smooth;
+        scroll-padding-top: 88px;
+        background: var(--surface);
+      }
+
+      body {
+        min-width: 320px;
+        margin: 0;
+        overflow-x: clip;
+        background: var(--surface);
+        color: var(--ink);
+        font-family: var(--font-body);
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      a:focus-visible,
+      summary:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--focus);
+        outline-offset: 4px;
+        transition: none;
+      }
+
+      a:not(.button):active,
+      summary:active,
+      button:active {
+        color: var(--orange);
+      }
+
+      img,
+      svg {
+        display: block;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        min-width: 0;
+        overflow-wrap: break-word;
+        color: var(--ink);
+        font-family: var(--font-display);
+        font-weight: 400;
+        line-height: 1.08;
+      }
+
+      .container {
+        width: min(calc(100% - var(--page-gutter) * 2), var(--content-width));
+        margin-inline: auto;
+      }
+
+      .skip-link {
+        position: absolute;
+        z-index: 20;
+        top: 12px;
+        left: 12px;
+        padding: 12px 16px;
+        transform: translateY(-160%);
+        border-radius: var(--radius);
+        background: var(--orange-action);
+        color: var(--orange-ink);
+        font-weight: 500;
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .site-header {
+        position: sticky;
+        z-index: 10;
+        top: 0;
+        border-bottom: 1px solid var(--rule);
+        background: var(--surface);
+      }
+
+      .header-inner {
+        display: flex;
+        min-height: 78px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .wordmark {
+        display: inline-flex;
+        align-items: center;
+        flex: 0 0 auto;
+        color: var(--ink);
+        font-family: var(--font-display);
+        font-size: 25px;
+        font-weight: 500;
+        letter-spacing: -0.07em;
+        line-height: 1;
+      }
+
+      .brand-mark {
+        width: 25px;
+        height: 29px;
+        margin-right: 8px;
+        object-fit: contain;
+      }
+
+      .wordmark strong {
+        color: var(--orange);
+        font-weight: 500;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: clamp(16px, 3vw, 40px);
+        margin-left: auto;
+      }
+
+      .nav-links > a:not(.button) {
+        color: var(--ink-soft);
+        font-size: 14px;
+        transition: color 260ms var(--ease-out);
+      }
+
+      .nav-links > a:not(.button):hover {
+        color: var(--orange);
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 0 20px;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        background: var(--orange-action);
+        color: var(--orange-ink);
+        font-family: var(--font-body);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.2;
+        transition:
+          background-color 250ms var(--ease-out),
+          transform 300ms var(--ease-out);
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        background: var(--orange-action);
+      }
+
+      .button:active {
+        color: inherit;
+      }
+
+      .button svg {
+        width: 16px;
+        height: 16px;
+        flex: 0 0 auto;
+      }
+
+      .button-secondary {
+        border-color: var(--rule-strong);
+        background: transparent;
+        color: var(--ink);
+      }
+
+      .button-secondary:hover {
+        border-color: var(--orange);
+        background: transparent;
+        color: var(--orange);
+      }
+
+      .hero {
+        display: grid;
+        min-height: min(730px, calc(100svh - 79px));
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        align-items: center;
+        gap: clamp(36px, 6vw, 88px);
+        padding-block: clamp(64px, 10vh, 120px);
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 1;
+        animation: arrive 650ms var(--ease-out) both;
+      }
+
+      .hero h1 {
+        max-width: 660px;
+        font-size: clamp(42px, 5.2vw, 70px);
+        letter-spacing: -0.065em;
+        line-height: 1.02;
+      }
+
+      .hero-copy > p {
+        max-width: 46ch;
+        margin-top: 24px;
+        color: var(--ink-soft);
+        font-size: clamp(16px, 1.5vw, 19px);
+        line-height: 1.55;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 32px;
+      }
+
+      .hero-visual {
+        position: relative;
+        min-width: 0;
+        color: var(--ink);
+        animation: arrive 800ms 90ms var(--ease-out) both;
+      }
+
+      .hero-visual img {
+        width: 100%;
+        min-height: 350px;
+        max-height: 520px;
+        aspect-ratio: 1.15;
+        border: 1px solid var(--rule);
+        border-radius: var(--radius);
+        background: var(--surface-raised);
+        color: var(--ink);
+        object-fit: cover;
+        object-position: 65% center;
+      }
+
+      .section {
+        padding-block: clamp(88px, 12vw, 152px);
+        border-top: 1px solid var(--rule);
+      }
+
+      .section.light-section {
+        --surface: #fff;
+        --surface-raised: #f7f7f5;
+        --surface-hover: #eeeeec;
+        --ink: #17191b;
+        --ink-soft: #3c4145;
+        --muted: #555b60;
+        --rule: #dedfdf;
+        --rule-strong: #b7bbbd;
+        --orange: #a84c00;
+        --orange-hover: #873e00;
+        --focus: #873e00;
+        background: var(--surface);
+        color: var(--ink);
+      }
+
+      .section-heading {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr);
+        align-items: end;
+        gap: 32px;
+        margin-bottom: 48px;
+      }
+
+      .section-heading h2 {
+        max-width: 680px;
+        font-size: clamp(34px, 4vw, 52px);
+        letter-spacing: -0.055em;
+        text-wrap: balance;
+      }
+
+      .section-heading p {
+        max-width: 54ch;
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      .portfolio-heading {
+        max-width: 720px;
+        margin-bottom: 48px;
+      }
+
+      .portfolio-eyebrow,
+      .product-lines-eyebrow {
+        margin-bottom: 18px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .portfolio-heading h2 {
+        font-size: clamp(36px, 5vw, 64px);
+        letter-spacing: -0.06em;
+        text-wrap: balance;
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .portfolio-card {
+        min-width: 0;
+        border: 1px solid var(--rule);
+        background: var(--surface-raised);
+      }
+
+      .portfolio-media,
+      .product-line-media {
+        position: relative;
+        overflow: hidden;
+        background: #f7f7f5;
+      }
+
+      .portfolio-media {
+        aspect-ratio: 4 / 3;
+      }
+
+      .portfolio-image,
+      .product-line-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        mix-blend-mode: normal;
+        filter: none;
+        transition: transform 1100ms var(--ease-out);
+      }
+
+      .portfolio-card:hover .portfolio-image,
+      .product-line-media:hover .product-line-image {
+        transform: scale(1.03);
+      }
+
+      .portfolio-number,
+      .product-line-number {
+        position: absolute;
+        z-index: 1;
+        top: 16px;
+        left: 16px;
+        padding: 4px 10px;
+        background: var(--surface);
+        color: var(--orange);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+      }
+
+      .portfolio-card-copy {
+        padding: 24px;
+      }
+
+      .portfolio-card h3 {
+        font-size: 22px;
+        letter-spacing: -0.035em;
+      }
+
+      .portfolio-card p {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .product-lines-section {
+        padding-top: clamp(56px, 8vw, 96px);
+      }
+
+      .product-lines-eyebrow {
+        margin-bottom: 28px;
+      }
+
+      .product-line {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: center;
+        gap: clamp(32px, 6vw, 80px);
+        padding-block: 52px;
+        border-top: 1px solid var(--rule);
+      }
+
+      .product-line-media {
+        aspect-ratio: 4 / 3;
+        border: 1px solid var(--rule);
+      }
+
+      .product-line:nth-child(even) .product-line-media {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .product-line:nth-child(even) .product-line-copy {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .product-line-copy h3 {
+        margin-top: 12px;
+        font-size: clamp(30px, 4vw, 48px);
+        letter-spacing: -0.055em;
+      }
+
+      .product-line-kicker {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      .product-line-brands {
+        display: flex;
+        min-height: 36px;
+        align-items: center;
+        gap: 16px;
+        margin-top: 20px;
+      }
+
+      .product-brand-logo {
+        max-width: 76px;
+        max-height: 32px;
+        object-fit: contain;
+        filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+      }
+
+      .product-brand-logo[src$='/lenovo.webp'],
+      .product-brand-logo[src$='/apple.webp'],
+      .product-brand-logo[src$='/samsung.webp'],
+      .product-brand-logo[src$='/xiaomi-mi.webp'] {
+        filter: brightness(0) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+      }
+
+      .line-detail-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        margin-top: 28px;
+      }
+
+      .line-detail-grid h4 {
+        margin-bottom: 8px;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .line-detail-grid ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--ink-soft);
+        font-size: 14px;
+      }
+
+      .product-line-note {
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .product-line-cta {
+        width: fit-content;
+        margin-top: 24px;
+      }
+
+      .about-section {
+        background: var(--surface-raised);
+        color: var(--ink);
+      }
+
+      .about-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+        gap: clamp(48px, 9vw, 128px);
+        align-items: start;
+      }
+
+      .about-copy h2,
+      .contact-copy h2 {
+        font-size: clamp(36px, 4.5vw, 58px);
+        letter-spacing: -0.06em;
+        text-wrap: balance;
+      }
+
+      .about-copy > p {
+        max-width: 54ch;
+        margin-top: 24px;
+        color: var(--ink-soft);
+        font-size: 17px;
+      }
+
+      .about-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .about-list li {
+        padding: 20px 0;
+        border-top: 1px solid var(--rule-strong);
+        color: var(--ink-soft);
+        font-size: 16px;
+      }
+
+      .about-list li:last-child {
+        border-bottom: 1px solid var(--rule-strong);
+      }
+
+      .client-carousel {
+        width: 100%;
+        overflow-x: hidden;
+        overflow-x: clip;
       }
 
       .client-track {
+        display: flex;
         width: 100%;
         flex-direction: column;
-        gap: 12px;
-      }
-
-      .client-carousel.is-running .client-track {
-        animation-duration: 36s !important;
-        animation-iteration-count: infinite !important;
+        gap: 0;
       }
 
       .client-list {
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 20px;
-        padding: 0;
+        gap: clamp(32px, 6vw, 80px);
+        margin: 0;
+        padding: 16px 0 24px;
+        list-style: none;
       }
 
-      .client-list[aria-hidden="true"] {
+      .client-list[aria-hidden='true'] {
         display: none;
       }
-    }
-  </style>
-</head>
-<body>
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="wordmark" href="#inicio" aria-label="PlaceTech, início"><img class="brand-mark" src="assets/placetech-mark.webp" alt="" width="435" height="495"><span>Place</span><strong>Tech</strong></a>
-      <nav class="nav-links" aria-label="Navegação principal">
-        <a href="#solucoes">Soluções</a>
-        <a href="#empresa">A PlaceTech</a>
-        <a href="#clientes">Clientes</a>
-        <a href="#contato">Contato</a>
-        <a class="button" href="https://wa.me/5511915971190?text=Ol%C3%A1%2C%20PlaceTech!" target="_blank" rel="noopener noreferrer">
-          Fale com a equipe
-          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </nav>
-    </div>
-  </header>
 
-  <main id="conteudo">
-    <section class="container hero" id="inicio" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <h1 id="hero-title">Tecnologia que mantém seu negócio em movimento.</h1>
-        <p>Representação comercial em São Paulo/SP, com atendimento próximo e soluções sob medida.</p>
-        <div class="hero-actions">
-          <a class="button" href="https://wa.me/5511915971190?text=Ol%C3%A1%2C%20PlaceTech!" target="_blank" rel="noopener noreferrer">
-            Fale com a PlaceTech
-            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a class="button button-secondary" href="#solucoes">Conheça as soluções</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <img src="assets/placetech-hero.webp" alt="Notebook e celular em uma mesa, com equipamentos de infraestrutura ao fundo." width="1600" height="900" fetchpriority="high">
-      </div>
-    </section>
-
-    <section class="section light-section" id="solucoes" aria-labelledby="solutions-title">
-      <div class="container">
-        <div class="section-heading">
-          <h2 id="solutions-title">Tecnologia para cada frente do seu negócio.</h2>
-          <p>Equipamentos e infraestrutura para apoiar a rotina da sua equipe, do ambiente de trabalho à conectividade.</p>
-        </div>
-        <div class="solution-grid">
-          <article class="solution">
-            <h3>Servidores</h3>
-            <p>Armazenamento centralizado, sistemas internos, backup e continuidade, dimensionados conforme sua necessidade.</p>
-          </article>
-          <article class="solution">
-            <h3>Conectividade e telefonia</h3>
-            <p>Switches, roteadores, repetidores, cabeamento e linhas de comunicação para casa ou empresa.</p>
-          </article>
-          <article class="solution">
-            <h3>Mobilidade premium</h3>
-            <p>Notebooks Apple das linhas Air e Pro, novos ou seminovos com garantia, para profissionais em movimento.</p>
-          </article>
-          <article class="solution">
-            <h3>Notebooks</h3>
-            <p>Marcas e configurações para o dia a dia, renovação de parque tecnológico e home office corporativo.</p>
-          </article>
-          <article class="solution">
-            <h3>Celulares</h3>
-            <p>Opções para equipes comerciais e externas, comunicação corporativa e gestão de aparelhos.</p>
-          </article>
-          <article class="solution">
-            <h3>Acessórios</h3>
-            <p>Teclados, mouses, headsets, cabeamento, suportes e monitores para completar o espaço de trabalho.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section about-section" id="empresa" aria-labelledby="about-title">
-      <div class="container about-layout">
-        <div class="about-copy">
-          <h2 id="about-title">Tecnologia com atendimento próximo.</h2>
-          <p>A PlaceTech é uma empresa de soluções em tecnologia e representação comercial em São Paulo/SP, atendendo empresas e profissionais com foco em qualidade e confiança.</p>
-        </div>
-        <ul class="about-list" aria-label="Diferenciais PlaceTech">
-          <li>Atendimento consultivo e personalizado</li>
-          <li>Agilidade na entrega e no suporte</li>
-          <li>Produtos de qualidade e garantia</li>
-          <li>Suporte pós-venda</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section light-section" id="clientes" aria-labelledby="clients-title">
-      <div class="container">
-        <div class="section-heading">
-          <h2 id="clients-title">Empresas que confiam na PlaceTech.</h2>
-          <p>Marcas apresentadas no portfólio da PlaceTech.</p>
-        </div>
-      </div>
-      <div class="client-carousel" role="region" aria-roledescription="carrossel" aria-label="Clientes PlaceTech">
-        <div class="client-track">
-          <ul class="client-list" aria-label="Logos de clientes">
-            <li class="client-logo"><img src="assets/client-logos/andritz.webp" alt="" width="209" height="46"><span class="client-name">Andritz</span></li>
-            <li class="client-logo"><img src="assets/client-logos/palmeiras.webp" alt="" width="106" height="99"><span class="client-name">Palmeiras</span></li>
-            <li class="client-logo"><img src="assets/client-logos/engemon.webp" alt="" width="80" height="87"><span class="client-name">Engemon</span></li>
-            <li class="client-logo"><img src="assets/client-logos/renault-brasil.webp" alt="" width="75" height="100"><span class="client-name">Renault Brasil</span></li>
-            <li class="client-logo"><img src="assets/client-logos/ampm.webp" alt="" width="252" height="71"><span class="client-name">ampm</span></li>
-            <li class="client-logo"><img src="assets/client-logos/santos-fc.webp" alt="" width="107" height="113"><span class="client-name">Santos FC</span></li>
-          </ul>
-          <ul class="client-list" aria-hidden="true">
-            <li class="client-logo"><img src="assets/client-logos/andritz.webp" alt="" width="209" height="46"><span class="client-name">Andritz</span></li>
-            <li class="client-logo"><img src="assets/client-logos/palmeiras.webp" alt="" width="106" height="99"><span class="client-name">Palmeiras</span></li>
-            <li class="client-logo"><img src="assets/client-logos/engemon.webp" alt="" width="80" height="87"><span class="client-name">Engemon</span></li>
-            <li class="client-logo"><img src="assets/client-logos/renault-brasil.webp" alt="" width="75" height="100"><span class="client-name">Renault Brasil</span></li>
-            <li class="client-logo"><img src="assets/client-logos/ampm.webp" alt="" width="252" height="71"><span class="client-name">ampm</span></li>
-            <li class="client-logo"><img src="assets/client-logos/santos-fc.webp" alt="" width="107" height="113"><span class="client-name">Santos FC</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-section" id="contato" aria-labelledby="contact-title">
-      <div class="container contact-layout">
-        <div class="contact-copy">
-          <h2 id="contact-title">Vamos construir juntos o próximo passo.</h2>
-          <p>Fale com a PlaceTech e encontre a tecnologia certa para o seu negócio.</p>
-          <div class="hero-actions">
-            <a class="button" href="https://wa.me/5511915971190?text=Ol%C3%A1%2C%20PlaceTech!" target="_blank" rel="noopener noreferrer">
-              Chamar no WhatsApp
-              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-        <div class="contact-details" aria-label="Canais de contato">
-          <a href="tel:+5511915971190">(11) 91597-1190</a>
-          <a href="mailto:vendas@placotech.com.br">vendas@placotech.com.br</a>
-          <a href="https://www.instagram.com/placotechh/" target="_blank" rel="noopener noreferrer">@placotechh no Instagram</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <a class="wordmark" href="#inicio" aria-label="PlaceTech, voltar ao início"><img class="brand-mark" src="assets/placetech-mark.webp" alt="" width="435" height="495"><span>Place</span><strong>Tech</strong></a>
-      <p class="footer-note">Soluções em tecnologia, São Paulo/SP</p>
-      <div class="footer-links">
-        <a href="tel:+5511915971190">Telefone</a>
-        <a href="mailto:vendas@placotech.com.br">E-mail</a>
-        <a href="https://www.instagram.com/placotechh/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      </div>
-    </div>
-  </footer>
-  <script>
-    const carousel = document.querySelector(".client-carousel");
-    const clientImages = [...carousel.querySelectorAll('.client-list:not([aria-hidden="true"]) img')];
-    const waitForImage = (image) => {
-      if (image.complete) {
-        return image.naturalWidth > 0
-          ? typeof image.decode === "function" ? image.decode() : Promise.resolve()
-          : Promise.reject(new Error(`Unable to load client logo: ${image.src}`));
+      .client-logo {
+        display: grid;
+        width: 160px;
+        min-height: 128px;
+        align-content: center;
+        justify-items: center;
+        gap: 12px;
+        color: var(--ink-soft);
+        text-align: center;
       }
 
-      return new Promise((resolve, reject) => {
-        image.addEventListener("load", () => {
-          if (typeof image.decode === "function") {
-            image.decode().then(resolve, reject);
-          } else {
-            resolve();
-          }
-        }, { once: true });
-        image.addEventListener("error", () => reject(new Error(`Unable to load client logo: ${image.src}`)), { once: true });
-      });
-    };
+      .client-logo img {
+        width: auto;
+        max-width: 145px;
+        height: auto;
+        max-height: 72px;
+        object-fit: contain;
+      }
 
-    Promise.all(clientImages.map(waitForImage))
-      .then(() => carousel.classList.add("is-running"))
-      .catch((error) => console.error("Client carousel logos could not be loaded.", error));
-  </script>
-</body>
+      .client-name {
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      .client-carousel.is-running .client-track {
+        width: max-content;
+        flex-direction: row;
+        animation: client-loop 36s linear infinite;
+      }
+
+      .client-carousel.is-running .client-list {
+        flex-wrap: nowrap;
+        min-width: 100vw;
+        justify-content: space-around;
+        padding: 16px clamp(32px, 6vw, 80px) 24px 0;
+      }
+
+      .client-carousel.is-running .client-list[aria-hidden='true'] {
+        display: flex;
+      }
+
+      @keyframes client-loop {
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .contact-section {
+        padding-block: clamp(88px, 11vw, 136px);
+        border-top: 1px solid var(--rule);
+        background: var(--surface-raised);
+        color: var(--ink);
+      }
+
+      .contact-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: end;
+        gap: 36px;
+      }
+
+      .contact-copy h2 {
+        max-width: 700px;
+      }
+
+      .contact-copy p {
+        margin-top: 20px;
+        color: var(--ink-soft);
+      }
+
+      .contact-details {
+        display: grid;
+        gap: 12px;
+        justify-items: start;
+        padding-bottom: 4px;
+      }
+
+      .contact-details a,
+      .footer-links a {
+        color: var(--ink-soft);
+        font-size: 14px;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+        transition: color 260ms var(--ease-out);
+      }
+
+      .contact-details a:hover,
+      .footer-links a:hover {
+        color: var(--orange);
+        text-decoration-line: underline;
+      }
+
+      .site-footer {
+        padding-block: 32px;
+        border-top: 1px solid var(--rule);
+      }
+
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .footer-note {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+      }
+
+      .footer-links a {
+        font-size: 13px;
+      }
+
+      @keyframes arrive {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 860px) {
+        .hero {
+          min-height: auto;
+          grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+          gap: 32px;
+        }
+
+        .hero h1 {
+          font-size: clamp(40px, 6vw, 58px);
+        }
+
+        .portfolio-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .about-layout {
+          gap: 48px;
+        }
+
+        .contact-layout {
+          grid-template-columns: minmax(0, 1fr);
+          align-items: start;
+        }
+      }
+
+      @media (max-width: 680px) {
+        :root {
+          --page-gutter: 22px;
+        }
+
+        .header-inner {
+          min-height: 70px;
+          flex-wrap: wrap;
+          gap: 0 16px;
+          padding-block: 16px;
+        }
+
+        .wordmark {
+          font-size: 23px;
+        }
+
+        .nav-links {
+          width: 100%;
+          flex: 1 1 100%;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 8px 12px;
+          margin-left: 0;
+          padding-top: 12px;
+        }
+
+        .nav-links > a:not(.button) {
+          padding-block: 4px;
+        }
+
+        .nav-links .button {
+          margin-left: auto;
+        }
+
+        .hero {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 32px;
+          padding-block: 64px 80px;
+        }
+
+        .hero h1 {
+          max-width: 560px;
+          font-size: clamp(42px, 11vw, 60px);
+        }
+
+        .hero-copy > p {
+          margin-top: 20px;
+        }
+
+        .hero-actions {
+          gap: 12px;
+          margin-top: 24px;
+        }
+
+        .button {
+          padding-inline: 16px;
+          font-size: 13px;
+        }
+
+        .hero-visual img {
+          min-height: 260px;
+          max-height: 400px;
+          aspect-ratio: 1.25;
+        }
+
+        .section {
+          padding-block: 84px;
+        }
+
+        .section-heading,
+        .about-layout {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 20px;
+          margin-bottom: 32px;
+        }
+
+        .about-layout {
+          gap: 40px;
+        }
+
+        .section-heading h2 {
+          font-size: clamp(36px, 9vw, 48px);
+        }
+
+        .portfolio-grid {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 12px;
+        }
+
+        .product-line {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 28px;
+          padding-block: 36px;
+        }
+
+        .product-line:nth-child(even) .product-line-media,
+        .product-line:nth-child(even) .product-line-copy {
+          grid-column: auto;
+          grid-row: auto;
+        }
+
+        .portfolio-card-copy {
+          padding: 20px;
+        }
+
+        .client-list {
+          gap: 24px;
+          padding-right: 24px;
+        }
+
+        .client-logo {
+          width: 136px;
+        }
+
+        .contact-section {
+          padding-block: 84px;
+        }
+
+        .footer-inner {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 16px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+
+        .client-track {
+          width: 100%;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .client-carousel.is-running .client-track {
+          animation-duration: 36s !important;
+          animation-iteration-count: infinite !important;
+        }
+
+        .client-list {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 20px;
+          padding: 0;
+        }
+
+        .client-list[aria-hidden='true'] {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="wordmark" href="#inicio" aria-label="PlaceTech, início"
+          ><img
+            class="brand-mark"
+            src="assets/placetech-mark.webp"
+            alt=""
+            width="435"
+            height="495"
+          /><span>Place</span><strong>Tech</strong></a
+        >
+        <nav class="nav-links" aria-label="Navegação principal">
+          <a href="#solucoes">Soluções</a>
+          <a href="#empresa">A PlaceTech</a>
+          <a href="#clientes">Clientes</a>
+          <a href="#contato">Contato</a>
+          <a
+            class="button"
+            href="https://wa.me/5511915971190?text=Ol%C3%A1%2C%20PlaceTech!"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Fale com a equipe
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path
+                d="M4 10h11m-4-4 4 4-4 4"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="container hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title">
+            Tecnologia que mantém seu negócio em movimento.
+          </h1>
+          <p>
+            Representação comercial em São Paulo/SP, com atendimento próximo e
+            soluções sob medida.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="button"
+              href="https://wa.me/5511915971190?text=Ol%C3%A1%2C%20PlaceTech!"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Fale com a PlaceTech
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path
+                  d="M4 10h11m-4-4 4 4-4 4"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+            <a class="button button-secondary" href="#solucoes"
+              >Conheça as soluções</a
+            >
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img
+            src="assets/placetech-hero.webp"
+            alt="Notebook e celular em uma mesa, com equipamentos de infraestrutura ao fundo."
+            width="1600"
+            height="900"
+            fetchpriority="high"
+          />
+        </div>
+      </section>
+
+      <section
+        class="section light-section"
+        id="solucoes"
+        aria-label="Portfólio e linhas de produto"
+      >
+        <section id="portfolio" aria-labelledby="portfolio-title">
+          <div class="container">
+            <div class="portfolio-heading">
+              <p class="portfolio-eyebrow">Nosso portfólio</p>
+              <h2 id="portfolio-title">
+                Do servidor ao acessório,<br />tudo o que sua operação precisa.
+              </h2>
+            </div>
+            <div class="portfolio-grid">
+              <article class="portfolio-card">
+                <div class="portfolio-media">
+                  <img
+                    class="portfolio-image"
+                    src="https://images.pexels.com/photos/37730212/pexels-photo-37730212.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
+                    alt="Servidores"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="portfolio-number" aria-hidden="true">01</span>
+                </div>
+                <div class="portfolio-card-copy">
+                  <h3>Servidores</h3>
+                  <p>Alta performance e confiabilidade</p>
+                </div>
+              </article>
+              <article class="portfolio-card">
+                <div class="portfolio-media">
+                  <img
+                    class="portfolio-image"
+                    src="https://images.pexels.com/photos/8532637/pexels-photo-8532637.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
+                    alt="Notebooks"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="portfolio-number" aria-hidden="true">02</span>
+                </div>
+                <div class="portfolio-card-copy">
+                  <h3>Notebooks</h3>
+                  <p>Mobilidade para produtividade</p>
+                </div>
+              </article>
+              <article class="portfolio-card">
+                <div class="portfolio-media">
+                  <img
+                    class="portfolio-image"
+                    src="https://images.unsplash.com/photo-1719945421298-f03d3d80c3e1?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+                    alt="Celulares"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="portfolio-number" aria-hidden="true">03</span>
+                </div>
+                <div class="portfolio-card-copy">
+                  <h3>Celulares</h3>
+                  <p>Conectividade e desempenho</p>
+                </div>
+              </article>
+              <article class="portfolio-card">
+                <div class="portfolio-media">
+                  <img
+                    class="portfolio-image"
+                    src="https://images.unsplash.com/photo-1788458813190-c29c8e821a16?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+                    alt="Acessórios"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="portfolio-number" aria-hidden="true">04</span>
+                </div>
+                <div class="portfolio-card-copy">
+                  <h3>Acessórios</h3>
+                  <p>Qualidade para o dia a dia</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="product-lines-section"
+          id="linhas"
+          aria-labelledby="product-lines-title"
+        >
+          <div class="container">
+            <p class="product-lines-eyebrow" id="product-lines-title">
+              Linhas de produto
+            </p>
+            <div class="product-line-list">
+              <article class="product-line">
+                <div class="product-line-media">
+                  <img
+                    class="product-line-image"
+                    src="https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?auto=format&amp;fit=crop&amp;w=1400&amp;q=80"
+                    alt="Servidores"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="product-line-number" aria-hidden="true">01</span>
+                </div>
+                <div class="product-line-copy">
+                  <p class="portfolio-eyebrow">Linha 01</p>
+                  <h3>Servidores</h3>
+                  <p class="product-line-kicker">
+                    Alta performance e confiabilidade
+                  </p>
+                  <div
+                    class="product-line-brands"
+                    aria-label="Marcas disponíveis"
+                  >
+                    <img
+                      class="product-brand-logo"
+                      src="assets/product-logos/lenovo.webp"
+                      alt="Lenovo"
+                      loading="lazy"
+                    />
+                    <img
+                      class="product-brand-logo"
+                      src="assets/product-logos/dell.webp"
+                      alt="Dell"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="line-detail-grid">
+                    <div>
+                      <h4>Ideal para</h4>
+                      <ul>
+                        <li>Armazenamento centralizado de arquivos e dados</li>
+                        <li>Sistemas ERP, CRM e aplicações internas</li>
+                        <li>Rotinas de backup e continuidade de negócio</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <p class="product-line-note">
+                    Soluções sob medida: opções dimensionadas conforme porte e
+                    necessidade do cliente.
+                  </p>
+                  <a
+                    class="button product-line-cta"
+                    href="https://wa.me/5511915971190?text=Ol%C3%A1!%20Tenho%20interesse%20na%20linha%20Servidores%20da%20PlaceTech.%20Podemos%20conversar%3F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Consultar esta linha no WhatsApp</a
+                  >
+                </div>
+              </article>
+
+              <article class="product-line">
+                <div class="product-line-media">
+                  <img
+                    class="product-line-image"
+                    src="https://images.pexels.com/photos/2881224/pexels-photo-2881224.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400"
+                    alt="Conectividade e Telefonia"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="product-line-number" aria-hidden="true">02</span>
+                </div>
+                <div class="product-line-copy">
+                  <p class="portfolio-eyebrow">Linha 02</p>
+                  <h3>Conectividade e Telefonia</h3>
+                  <p class="product-line-kicker">
+                    Soluções para redes de internet e comunicação
+                  </p>
+                  <div class="line-detail-grid">
+                    <div>
+                      <h4>Infraestrutura de rede</h4>
+                      <ul>
+                        <li>Switches</li>
+                        <li>Patch cords</li>
+                        <li>Patch panels</li>
+                        <li>Hubs</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4>Conectividade</h4>
+                      <ul>
+                        <li>Roteadores</li>
+                        <li>Repetidores</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4>Telefonia</h4>
+                      <ul>
+                        <li>Linhas domésticas</li>
+                        <li>Linhas empresariais</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <p class="product-line-note">
+                    Soluções sob medida: opções dimensionadas conforme porte e
+                    necessidade do cliente.
+                  </p>
+                  <a
+                    class="button product-line-cta"
+                    href="https://wa.me/5511915971190?text=Ol%C3%A1!%20Tenho%20interesse%20na%20linha%20Conectividade%20e%20Telefonia%20da%20PlaceTech.%20Podemos%20conversar%3F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Consultar esta linha no WhatsApp</a
+                  >
+                </div>
+              </article>
+
+              <article class="product-line">
+                <div class="product-line-media">
+                  <img
+                    class="product-line-image"
+                    src="https://images.unsplash.com/photo-1575024357670-2b5164f470c3?auto=format&amp;fit=crop&amp;w=1400&amp;q=80"
+                    alt="Mobilidade Premium"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="product-line-number" aria-hidden="true">03</span>
+                </div>
+                <div class="product-line-copy">
+                  <p class="portfolio-eyebrow">Linha 03</p>
+                  <h3>Mobilidade Premium</h3>
+                  <p class="product-line-kicker">
+                    Linhas Air e Pro, novas ou seminovas com garantia
+                  </p>
+                  <div
+                    class="product-line-brands"
+                    aria-label="Marcas disponíveis"
+                  >
+                    <img
+                      class="product-brand-logo"
+                      src="assets/product-logos/apple.webp"
+                      alt="Apple"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="line-detail-grid">
+                    <div>
+                      <h4>Perfeitos para</h4>
+                      <ul>
+                        <li>Times criativos: design, vídeo e áudio</li>
+                        <li>Profissionais em mobilidade constante</li>
+                        <li>Empresas integradas ao ecossistema Apple</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <a
+                    class="button product-line-cta"
+                    href="https://wa.me/5511915971190?text=Ol%C3%A1!%20Tenho%20interesse%20na%20linha%20Mobilidade%20Premium%20da%20PlaceTech.%20Podemos%20conversar%3F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Consultar esta linha no WhatsApp</a
+                  >
+                </div>
+              </article>
+
+              <article class="product-line">
+                <div class="product-line-media">
+                  <img
+                    class="product-line-image"
+                    src="https://images.unsplash.com/photo-1543145223-1f9043516739?auto=format&amp;fit=crop&amp;w=1400&amp;q=80"
+                    alt="Notebooks corporativos"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="product-line-number" aria-hidden="true">04</span>
+                </div>
+                <div class="product-line-copy">
+                  <p class="portfolio-eyebrow">Linha 04</p>
+                  <h3>Notebooks corporativos</h3>
+                  <p class="product-line-kicker">
+                    Diversas marcas e configurações confiáveis para uso diário
+                  </p>
+                  <div
+                    class="product-line-brands"
+                    aria-label="Marcas disponíveis"
+                  >
+                    <img
+                      class="product-brand-logo"
+                      src="assets/product-logos/lenovo.webp"
+                      alt="Lenovo"
+                      loading="lazy"
+                    />
+                    <img
+                      class="product-brand-logo"
+                      src="assets/product-logos/dell.webp"
+                      alt="Dell"
+                      loading="lazy"
+                    />
+                    <img
+                      class="product-brand-logo"
+                      src="assets/product-logos/acer.webp"
+                      alt="Acer"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="line-detail-grid">
+                    <div>
+                      <h4>Ideal para</h4>
+                      <ul>
+                        <li>Equipes administrativas e operacionais</li>
+                        <li>Renovação de parque tecnológico</li>
+                        <li>Home office corporativo</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <a
+                    class="button product-line-cta"
+                    href="https://wa.me/5511915971190?text=Ol%C3%A1!%20Tenho%20interesse%20na%20linha%20Notebooks%20corporativos%20da%20PlaceTech.%20Podemos%20conversar%3F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Consultar esta linha no WhatsApp</a
+                  >
+                </div>
+              </article>
+
+              <article class="product-line">
+                <div class="product-line-media">
+                  <img
+                    class="product-line-image"
+                    src="https://images.pexels.com/photos/33796980/pexels-photo-33796980.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400"
+                    alt="Celulares"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="product-line-number" aria-hidden="true">05</span>
+                </div>
+                <div class="product-line-copy">
+                  <p class="portfolio-eyebrow">Linha 05</p>
+                  <h3>Celulares</h3>
+                  <p class="product-line-kicker">
+                    Diferentes marcas e faixas de preço
+                  </p>
+                  <div
+                    class="product-line-brands"
+                    aria-label="Marcas disponíveis"
+                  >
+                    <img
+                      class="product-brand-logo"
+                      src="assets/product-logos/apple.webp"
+                      alt="Apple"
+                      loading="lazy"
+                    />
+                    <img
+                      class="product-brand-logo"
+                      src="assets/product-logos/samsung.webp"
+                      alt="Samsung"
+                      loading="lazy"
+                    />
+                    <img
+                      class="product-brand-logo"
+                      src="assets/product-logos/xiaomi-mi.webp"
+                      alt="Xiaomi Mi"
+                      loading="lazy"
+                    />
+                    <img
+                      class="product-brand-logo"
+                      src="assets/product-logos/motorola.webp"
+                      alt="Motorola"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="line-detail-grid">
+                    <div>
+                      <h4>Ideal para</h4>
+                      <ul>
+                        <li>Equipes comerciais e externas</li>
+                        <li>Comunicação corporativa</li>
+                        <li>Gestão facilitada de frotas de aparelhos</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <a
+                    class="button product-line-cta"
+                    href="https://wa.me/5511915971190?text=Ol%C3%A1!%20Tenho%20interesse%20na%20linha%20Celulares%20da%20PlaceTech.%20Podemos%20conversar%3F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Consultar esta linha no WhatsApp</a
+                  >
+                </div>
+              </article>
+
+              <article class="product-line">
+                <div class="product-line-media">
+                  <img
+                    class="product-line-image"
+                    src="https://images.unsplash.com/photo-1788458131906-d0878ba5fa4d?auto=format&amp;fit=crop&amp;w=1400&amp;q=80"
+                    alt="Escritório completo"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="product-line-number" aria-hidden="true">06</span>
+                </div>
+                <div class="product-line-copy">
+                  <p class="portfolio-eyebrow">Linha 06</p>
+                  <h3>Escritório completo</h3>
+                  <p class="product-line-kicker">Acessórios para o dia a dia</p>
+                  <div
+                    class="product-line-brands"
+                    aria-label="Marcas disponíveis"
+                  >
+                    <img
+                      class="product-brand-logo"
+                      src="assets/product-logos/acer.webp"
+                      alt="Acer"
+                      loading="lazy"
+                    />
+                    <img
+                      class="product-brand-logo"
+                      src="assets/product-logos/logitech.webp"
+                      alt="Logitech"
+                      loading="lazy"
+                    />
+                    <img
+                      class="product-brand-logo"
+                      src="assets/product-logos/dell.webp"
+                      alt="Dell"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="line-detail-grid">
+                    <div>
+                      <h4>No kit</h4>
+                      <ul>
+                        <li>Teclados, mouses e headsets</li>
+                        <li>Cabeamento de conexões</li>
+                        <li>Suportes</li>
+                        <li>Monitor</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <a
+                    class="button product-line-cta"
+                    href="https://wa.me/5511915971190?text=Ol%C3%A1!%20Tenho%20interesse%20na%20linha%20Escrit%C3%B3rio%20completo%20da%20PlaceTech.%20Podemos%20conversar%3F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Consultar esta linha no WhatsApp</a
+                  >
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section
+        class="section about-section"
+        id="empresa"
+        aria-labelledby="about-title"
+      >
+        <div class="container about-layout">
+          <div class="about-copy">
+            <h2 id="about-title">Tecnologia com atendimento próximo.</h2>
+            <p>
+              A PlaceTech é uma empresa de soluções em tecnologia e
+              representação comercial em São Paulo/SP, atendendo empresas e
+              profissionais com foco em qualidade e confiança.
+            </p>
+          </div>
+          <ul class="about-list" aria-label="Diferenciais PlaceTech">
+            <li>Atendimento consultivo e personalizado</li>
+            <li>Agilidade na entrega e no suporte</li>
+            <li>Produtos de qualidade e garantia</li>
+            <li>Suporte pós-venda</li>
+          </ul>
+        </div>
+      </section>
+
+      <section
+        class="section light-section"
+        id="clientes"
+        aria-labelledby="clients-title"
+      >
+        <div class="container">
+          <div class="section-heading">
+            <h2 id="clients-title">Empresas que confiam na PlaceTech.</h2>
+            <p>Marcas apresentadas no portfólio da PlaceTech.</p>
+          </div>
+        </div>
+        <div
+          class="client-carousel"
+          role="region"
+          aria-roledescription="carrossel"
+          aria-label="Clientes PlaceTech"
+        >
+          <div class="client-track">
+            <ul class="client-list" aria-label="Logos de clientes">
+              <li class="client-logo">
+                <img
+                  src="assets/client-logos/andritz.webp"
+                  alt=""
+                  width="209"
+                  height="46"
+                /><span class="client-name">Andritz</span>
+              </li>
+              <li class="client-logo">
+                <img
+                  src="assets/client-logos/palmeiras.webp"
+                  alt=""
+                  width="106"
+                  height="99"
+                /><span class="client-name">Palmeiras</span>
+              </li>
+              <li class="client-logo">
+                <img
+                  src="assets/client-logos/engemon.webp"
+                  alt=""
+                  width="80"
+                  height="87"
+                /><span class="client-name">Engemon</span>
+              </li>
+              <li class="client-logo">
+                <img
+                  src="assets/client-logos/renault-brasil.webp"
+                  alt=""
+                  width="75"
+                  height="100"
+                /><span class="client-name">Renault Brasil</span>
+              </li>
+              <li class="client-logo">
+                <img
+                  src="assets/client-logos/ampm.webp"
+                  alt=""
+                  width="252"
+                  height="71"
+                /><span class="client-name">ampm</span>
+              </li>
+              <li class="client-logo">
+                <img
+                  src="assets/client-logos/santos-fc.webp"
+                  alt=""
+                  width="107"
+                  height="113"
+                /><span class="client-name">Santos FC</span>
+              </li>
+            </ul>
+            <ul class="client-list" aria-hidden="true">
+              <li class="client-logo">
+                <img
+                  src="assets/client-logos/andritz.webp"
+                  alt=""
+                  width="209"
+                  height="46"
+                /><span class="client-name">Andritz</span>
+              </li>
+              <li class="client-logo">
+                <img
+                  src="assets/client-logos/palmeiras.webp"
+                  alt=""
+                  width="106"
+                  height="99"
+                /><span class="client-name">Palmeiras</span>
+              </li>
+              <li class="client-logo">
+                <img
+                  src="assets/client-logos/engemon.webp"
+                  alt=""
+                  width="80"
+                  height="87"
+                /><span class="client-name">Engemon</span>
+              </li>
+              <li class="client-logo">
+                <img
+                  src="assets/client-logos/renault-brasil.webp"
+                  alt=""
+                  width="75"
+                  height="100"
+                /><span class="client-name">Renault Brasil</span>
+              </li>
+              <li class="client-logo">
+                <img
+                  src="assets/client-logos/ampm.webp"
+                  alt=""
+                  width="252"
+                  height="71"
+                /><span class="client-name">ampm</span>
+              </li>
+              <li class="client-logo">
+                <img
+                  src="assets/client-logos/santos-fc.webp"
+                  alt=""
+                  width="107"
+                  height="113"
+                /><span class="client-name">Santos FC</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="contact-section"
+        id="contato"
+        aria-labelledby="contact-title"
+      >
+        <div class="container contact-layout">
+          <div class="contact-copy">
+            <h2 id="contact-title">Vamos construir juntos o próximo passo.</h2>
+            <p>
+              Fale com a PlaceTech e encontre a tecnologia certa para o seu
+              negócio.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="button"
+                href="https://wa.me/5511915971190?text=Ol%C3%A1%2C%20PlaceTech!"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Chamar no WhatsApp
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path
+                    d="M4 10h11m-4-4 4 4-4 4"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="contact-details" aria-label="Canais de contato">
+            <a href="tel:+5511915971190">(11) 91597-1190</a>
+            <a href="mailto:vendas@placetech.com.br">vendas@placetech.com.br</a>
+            <a
+              href="https://www.instagram.com/placetechh/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >@placetechh no Instagram</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a
+          class="wordmark"
+          href="#inicio"
+          aria-label="PlaceTech, voltar ao início"
+          ><img
+            class="brand-mark"
+            src="assets/placetech-mark.webp"
+            alt=""
+            width="435"
+            height="495"
+          /><span>Place</span><strong>Tech</strong></a
+        >
+        <p class="footer-note">Soluções em tecnologia, São Paulo/SP</p>
+        <div class="footer-links">
+          <a href="tel:+5511915971190">Telefone</a>
+          <a href="mailto:vendas@placetech.com.br">E-mail</a>
+          <a
+            href="https://www.instagram.com/placetechh/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Instagram</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script>
+      const carousel = document.querySelector('.client-carousel');
+      const clientImages = [
+        ...carousel.querySelectorAll(
+          '.client-list:not([aria-hidden="true"]) img'
+        ),
+      ];
+      const waitForImage = (image) => {
+        if (image.complete) {
+          return image.naturalWidth > 0
+            ? typeof image.decode === 'function'
+              ? image.decode()
+              : Promise.resolve()
+            : Promise.reject(
+                new Error(`Unable to load client logo: ${image.src}`)
+              );
+        }
+
+        return new Promise((resolve, reject) => {
+          image.addEventListener(
+            'load',
+            () => {
+              if (typeof image.decode === 'function') {
+                image.decode().then(resolve, reject);
+              } else {
+                resolve();
+              }
+            },
+            { once: true }
+          );
+          image.addEventListener(
+            'error',
+            () => reject(new Error(`Unable to load client logo: ${image.src}`)),
+            { once: true }
+          );
+        });
+      };
+
+      Promise.all(clientImages.map(waitForImage))
+        .then(() => carousel.classList.add('is-running'))
+        .catch((error) =>
+          console.error('Client carousel logos could not be loaded.', error)
+        );
+    </script>
+  </body>
 </html>

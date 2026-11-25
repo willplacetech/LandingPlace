@@ -10,6 +10,12 @@ const pageV2CssFile = new URL("./styles-v2/page.css", import.meta.url);
 const pageV2Css = existsSync(pageV2CssFile) ? readFileSync(pageV2CssFile, "utf8") : "";
 const purePage = new URL("./indexPuro.html", import.meta.url);
 const pureHtml = existsSync(purePage) ? readFileSync(purePage, "utf8") : "";
+const clientManifestFile = new URL("./assets/client-logos.json", import.meta.url);
+const clientManifest = JSON.parse(readFileSync(clientManifestFile, "utf8"));
+const clientLogosScript = readFileSync(new URL("./assets/client-logos.js", import.meta.url), "utf8");
+const adminPage = new URL("./admin.html", import.meta.url);
+const adminHtml = readFileSync(adminPage, "utf8");
+const adminScript = readFileSync(new URL("./assets/client-admin.js", import.meta.url), "utf8");
 
 test("has a responsive Portuguese page with navigable sections", () => {
   assert.match(html, /<html lang="pt-BR">/);
@@ -140,22 +146,31 @@ test("keeps navigation links visible and wrapping on small screens", () => {
   assert.doesNotMatch(html, /class="nav-menu"/);
 });
 
-test("shows all six PDF client logos in an accessible automatic loop", () => {
+test("shows all client logos in an accessible automatic loop", () => {
   assert.match(html, /class="client-carousel"[^>]*aria-label="Clientes PlaceTech"/);
   assert.match(html, /@keyframes client-loop/);
   assert.match(html, /\.client-carousel\.is-running \.client-track[\s\S]*?animation:\s*client-loop\s+36s\s+linear\s+infinite/);
   assert.match(html, /aria-hidden="true"[\s\S]*?client-logos/);
   assert.doesNotMatch(html, /carousel-toggle|is-paused|animation-play-state:\s*paused/);
   assert.doesNotMatch(html, /<img src="assets\/client-logos\/[^"]+"[^>]*loading="lazy"/);
-  for (const client of ["andritz", "palmeiras", "engemon", "renault-brasil", "ampm", "santos-fc"]) {
-    assert.ok(html.includes(`${client}.webp`), `missing client logo: ${client}`);
-    assert.ok(existsSync(new URL(`./assets/client-logos/${client}.webp`, import.meta.url)), `missing logo file: ${client}`);
+  for (const [client, extension] of [
+    ["andritz", "webp"],
+    ["palmeiras", "webp"],
+    ["engemon", "webp"],
+    ["renault-brasil", "webp"],
+    ["ampm", "webp"],
+    ["santos-fc", "webp"],
+    ["vale", "png"],
+    ["petrobras", "svg"],
+  ]) {
+    assert.ok(html.includes(`${client}.${extension}`), `missing client logo: ${client}`);
+    assert.ok(existsSync(new URL(`./assets/client-logos/${client}.${extension}`, import.meta.url)), `missing logo file: ${client}`);
   }
 });
 
 test("keeps the clients heading constrained while the carousel spans the section", () => {
   const section = html.match(/<section\b(?=[^>]*\bid="clientes")[^>]*>([\s\S]*?)<\/section>/)?.[1] ?? "";
-  assert.match(section, /<\/div>\s*<div class="client-carousel"/);
+  assert.match(section, /<\/div>\s*<div\b(?=[^>]*\bclass="client-carousel")/);
   assert.match(html, /\.client-carousel\s*\{[^}]*width:\s*100%;/);
 });
 
@@ -166,17 +181,21 @@ test("keeps the client loop infinite with reduced motion enabled", () => {
 
 test("preloads and distributes client logos across wide viewports before animation", () => {
   for (const client of ["andritz", "palmeiras", "engemon", "renault-brasil", "ampm", "santos-fc"]) {
-    assert.match(html, new RegExp(`<link rel="preload" as="image" href="assets/client-logos/${client}\\.webp">`));
+    assert.match(html, new RegExp(`<link\\b[^>]*href="assets/client-logos/${client}\\.webp"[^>]*>`));
   }
+  assert.match(html, /<link rel="preload" as="image" href="assets\/client-logos\/vale\.png"/);
+  assert.match(html, /<link rel="preload" as="image" href="assets\/client-logos\/petrobras\.svg"/);
   assert.match(html, /\.client-carousel\.is-running \.client-list\s*\{[^}]*min-width:\s*100vw;[^}]*justify-content:\s*space-around;/);
   assert.doesNotMatch(html, /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.client-list\s*\{[^}]*width:\s*100%;/);
-  assert.match(html, /Promise\.all\(clientImages\.map\(waitForImage\)\)\s*\.then\(\(\)\s*=>\s*carousel\.classList\.add\("is-running"\)\)/);
+  assert.match(html, /src="assets\/client-logos\.js" defer/);
+  assert.match(clientLogosScript, /Promise\.all\(\[\.\.\.list\.querySelectorAll\("img"\)\]\.map\(waitForImage\)\)/);
 });
 
 test("keeps reduced-motion styles and the page self-contained", () => {
   assert.match(html, /prefers-reduced-motion:\s*reduce/);
   assert.match(html, /:focus-visible/);
-  assert.doesNotMatch(html, /<script[^>]+src=/i);
+  assert.match(html, /<script src="assets\/client-logos\.js" defer><\/script>/);
+  assert.doesNotMatch(html, /<script[^>]+src="https?:/i);
   assert.doesNotMatch(html, /transition:\s*all\b/i);
 });
 
@@ -188,9 +207,40 @@ test("provides an independent second version with navigation and verified contac
     assert.match(htmlV2, new RegExp(`href="#${id}"`));
   }
   assert.match(htmlV2, /https:\/\/wa\.me\/5511915971190/);
+  assert.doesNotMatch(htmlV2, /assets\/client-logos\.js|href="admin\.html"/);
   assert.match(htmlV2, /tel:\+5511915971190/);
   assert.match(htmlV2, /mailto:vendas@placotech\.com\.br/);
   assert.match(htmlV2, /https:\/\/www\.instagram\.com\/placotechh/);
+});
+
+test("uses an ordered manifest for the main carousel and includes every current logo", () => {
+  assert.equal(clientManifest.version, 1);
+  assert.deepEqual(
+    clientManifest.logos.map(({ name }) => name),
+    ["Andritz", "Palmeiras", "Engemon", "Renault Brasil", "ampm", "Santos FC", "Vale", "Petrobras"]
+  );
+  for (const logo of clientManifest.logos) {
+    assert.ok(existsSync(new URL(`./${logo.src}`, import.meta.url)), `missing manifest asset: ${logo.src}`);
+  }
+  assert.match(html, /src="assets\/client-logos\.js" defer/);
+  assert.match(html, /data-manifest-version="1"/);
+  assert.match(html, /\.client-carousel\.is-running \.client-track[\s\S]*?animation:\s*client-loop\s+36s\s+linear\s+infinite/);
+  assert.match(html, /href="admin\.html">Área administrativa<\/a>/);
+});
+
+test("provides a password-gated logo editor with local export and reordering", () => {
+  assert.match(adminHtml, /id="setup-form"/);
+  assert.match(adminHtml, /id="login-form"/);
+  assert.match(adminHtml, /senha é uma barreira casual/);
+  assert.match(adminHtml, /href="index\.html"/);
+  assert.match(adminHtml, /href="styles\/admin\.css"/);
+  assert.match(adminHtml, /assets\/client-logos\.json/);
+  assert.match(adminHtml, /type="file" accept="image\/png,image\/jpeg,image\/webp"/);
+  assert.match(adminScript, /iterations:\s*180000/);
+  assert.match(adminScript, /canvas\.toBlob\(resolve,\s*"image\/webp",\s*0\.88\)/);
+  assert.match(adminScript, /download\s*=\s*"client-logos\.json"/);
+  assert.match(adminScript, /data-move/);
+  assert.match(adminScript, /saveDraft\(nextLogos\)/);
 });
 
 test("uses the supplied dark logo treatment in the v2 header and footer", () => {

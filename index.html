@@ -19,6 +19,8 @@
     />
     <link rel="preload" as="image" href="assets/client-logos/ampm.webp" />
     <link rel="preload" as="image" href="assets/client-logos/santos-fc.webp" />
+    <link rel="preload" as="image" href="assets/client-logos/vale.png" />
+    <link rel="preload" as="image" href="assets/client-logos/petrobras.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -623,10 +625,8 @@
       }
 
       .client-logo img {
-        width: auto;
-        max-width: 145px;
-        height: auto;
-        max-height: 72px;
+        width: 145px;
+        height: 72px;
         object-fit: contain;
       }
 
@@ -1495,6 +1495,7 @@
           role="region"
           aria-roledescription="carrossel"
           aria-label="Clientes PlaceTech"
+          data-manifest-version="1"
         >
           <div class="client-track">
             <ul class="client-list" aria-label="Logos de clientes">
@@ -1546,6 +1547,22 @@
                   height="113"
                 /><span class="client-name">Santos FC</span>
               </li>
+              <li class="client-logo">
+                <img
+                  src="assets/client-logos/vale.png"
+                  alt=""
+                  width="145"
+                  height="72"
+                /><span class="client-name">Vale</span>
+              </li>
+              <li class="client-logo">
+                <img
+                  src="assets/client-logos/petrobras.svg"
+                  alt=""
+                  width="145"
+                  height="72"
+                /><span class="client-name">Petrobras</span>
+              </li>
             </ul>
             <ul class="client-list" aria-hidden="true">
               <li class="client-logo">
@@ -1595,6 +1612,22 @@
                   width="107"
                   height="113"
                 /><span class="client-name">Santos FC</span>
+              </li>
+              <li class="client-logo">
+                <img
+                  src="assets/client-logos/vale.png"
+                  alt=""
+                  width="145"
+                  height="72"
+                /><span class="client-name">Vale</span>
+              </li>
+              <li class="client-logo">
+                <img
+                  src="assets/client-logos/petrobras.svg"
+                  alt=""
+                  width="145"
+                  height="72"
+                /><span class="client-name">Petrobras</span>
               </li>
             </ul>
           </div>
@@ -1665,6 +1698,7 @@
         <div class="footer-links">
           <a href="tel:+5511915971190">Telefone</a>
           <a href="mailto:vendas@placetech.com.br">E-mail</a>
+          <a href="admin.html">Área administrativa</a>
           <a
             href="https://www.instagram.com/placetechh/"
             target="_blank"
@@ -1674,49 +1708,6 @@
         </div>
       </div>
     </footer>
-    <script>
-      const carousel = document.querySelector('.client-carousel');
-      const clientImages = [
-        ...carousel.querySelectorAll(
-          '.client-list:not([aria-hidden="true"]) img'
-        ),
-      ];
-      const waitForImage = (image) => {
-        if (image.complete) {
-          return image.naturalWidth > 0
-            ? typeof image.decode === 'function'
-              ? image.decode()
-              : Promise.resolve()
-            : Promise.reject(
-                new Error(`Unable to load client logo: ${image.src}`)
-              );
-        }
-
-        return new Promise((resolve, reject) => {
-          image.addEventListener(
-            'load',
-            () => {
-              if (typeof image.decode === 'function') {
-                image.decode().then(resolve, reject);
-              } else {
-                resolve();
-              }
-            },
-            { once: true }
-          );
-          image.addEventListener(
-            'error',
-            () => reject(new Error(`Unable to load client logo: ${image.src}`)),
-            { once: true }
-          );
-        });
-      };
-
-      Promise.all(clientImages.map(waitForImage))
-        .then(() => carousel.classList.add('is-running'))
-        .catch((error) =>
-          console.error('Client carousel logos could not be loaded.', error)
-        );
-    </script>
+    <script src="assets/client-logos.js" defer></script>
   </body>
 </html>

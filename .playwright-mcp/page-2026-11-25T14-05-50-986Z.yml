@@ -1,0 +1,119 @@
+- generic [active] [ref=e1]:
+  - link "Pular para o conteúdo" [ref=e2] [cursor=pointer]:
+    - /url: "#conteudo"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "PlaceTech, voltar ao site" [ref=e5] [cursor=pointer]:
+        - /url: index-v2.html
+        - generic [ref=e6]: Place
+        - strong [ref=e7]: Tech
+      - link "Voltar ao site" [ref=e8] [cursor=pointer]:
+        - /url: index-v2.html
+  - main [ref=e9]:
+    - generic [ref=e10]:
+      - generic [ref=e11]:
+        - heading "Gerenciar logotipos" [level=1] [ref=e12]
+        - paragraph [ref=e13]: Prepare novas marcas para o carrossel da PlaceTech. As imagens são ajustadas para um mesmo espaço visual sem distorcer o original.
+      - complementary "Limite de publicação" [ref=e14]:
+        - strong [ref=e15]: Publicação manual
+        - paragraph [ref=e16]:
+          - text: Este site não tem servidor. Depois de adicionar os logos, baixe o manifesto JSON, substitua
+          - code [ref=e17]: assets/client-logos.json
+          - text: no projeto e publique o site novamente. O rascunho local aparece apenas neste navegador.
+      - region "Catálogo de clientes" [ref=e36]:
+        - generic [ref=e37]:
+          - generic [ref=e38]:
+            - heading "Catálogo de clientes" [level=2] [ref=e39]
+            - paragraph [ref=e40]: Adicione até 30 marcas. O novo logo ficará no rascunho local e no manifesto exportado.
+          - paragraph [ref=e41]: 8 de 30 logos
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - heading "Adicionar logo" [level=3] [ref=e44]
+            - generic [ref=e45]: Nome da empresa
+            - textbox "Nome da empresa" [ref=e46]
+            - generic [ref=e47]: Arquivo da imagem
+            - button "Arquivo da imagem" [ref=e48]
+            - paragraph [ref=e49]: PNG, JPG ou WebP · até 8 MB. A imagem será ajustada para 1200 × 420 px, mantendo a proporção.
+            - button "Adicionar ao catálogo" [ref=e50] [cursor=pointer]
+          - generic [ref=e51]:
+            - heading "Logos incluídos" [level=3] [ref=e52]
+            - list "Logos no catálogo" [ref=e53]:
+              - listitem [ref=e54]:
+                - generic [ref=e55]:
+                  - generic [ref=e56]:
+                    - text: Andritz
+                    - generic [ref=e57]: Imagem do projeto
+                  - generic [ref=e58]:
+                    - button "Subir Andritz na ordem do carrossel" [disabled] [ref=e59]: Subir
+                    - button "Descer Andritz na ordem do carrossel" [ref=e60] [cursor=pointer]: Descer
+              - listitem [ref=e61]:
+                - generic [ref=e62]:
+                  - generic [ref=e63]:
+                    - text: Palmeiras
+                    - generic [ref=e64]: Imagem do projeto
+                  - generic [ref=e65]:
+                    - button "Subir Palmeiras na ordem do carrossel" [ref=e66] [cursor=pointer]: Subir
+                    - button "Descer Palmeiras na ordem do carrossel" [ref=e67] [cursor=pointer]: Descer
+              - listitem [ref=e68]:
+                - generic [ref=e69]:
+                  - generic [ref=e70]:
+                    - text: Engemon
+                    - generic [ref=e71]: Imagem do projeto
+                  - generic [ref=e72]:
+                    - button "Subir Engemon na ordem do carrossel" [ref=e73] [cursor=pointer]: Subir
+                    - button "Descer Engemon na ordem do carrossel" [ref=e74] [cursor=pointer]: Descer
+              - listitem [ref=e75]:
+                - generic [ref=e76]:
+                  - generic [ref=e77]:
+                    - text: Renault Brasil
+                    - generic [ref=e78]: Imagem do projeto
+                  - generic [ref=e79]:
+                    - button "Subir Renault Brasil na ordem do carrossel" [ref=e80] [cursor=pointer]: Subir
+                    - button "Descer Renault Brasil na ordem do carrossel" [ref=e81] [cursor=pointer]: Descer
+              - listitem [ref=e82]:
+                - generic [ref=e83]:
+                  - generic [ref=e84]:
+                    - text: ampm
+                    - generic [ref=e85]: Imagem do projeto
+                  - generic [ref=e86]:
+                    - button "Subir ampm na ordem do carrossel" [ref=e87] [cursor=pointer]: Subir
+                    - button "Descer ampm na ordem do carrossel" [ref=e88] [cursor=pointer]: Descer
+              - listitem [ref=e89]:
+                - generic [ref=e90]:
+                  - generic [ref=e91]:
+                    - text: Santos FC
+                    - generic [ref=e92]: Imagem do projeto
+                  - generic [ref=e93]:
+                    - button "Subir Santos FC na ordem do carrossel" [ref=e94] [cursor=pointer]: Subir
+                    - button "Descer Santos FC na ordem do carrossel" [ref=e95] [cursor=pointer]: Descer
+              - listitem [ref=e96]:
+                - generic [ref=e97]:
+                  - generic [ref=e98]:
+                    - text: Vale
+                    - generic [ref=e99]: Imagem do projeto
+                  - generic [ref=e100]:
+                    - button "Subir Vale na ordem do carrossel" [ref=e101] [cursor=pointer]: Subir
+                    - button "Descer Vale na ordem do carrossel" [ref=e102] [cursor=pointer]: Descer
+              - listitem [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]:
+                    - text: Petrobras
+                    - generic [ref=e106]: Imagem do projeto
+                  - generic [ref=e107]:
+                    - button "Subir Petrobras na ordem do carrossel" [ref=e108] [cursor=pointer]: Subir
+                    - button "Descer Petrobras na ordem do carrossel" [disabled] [ref=e109]: Descer
+        - generic [ref=e110]:
+          - button "Baixar manifesto JSON" [disabled] [ref=e111]
+          - button "Sair do painel" [ref=e112] [cursor=pointer]
+        - status [ref=e113]
+        - group [ref=e114]:
+          - generic "Como publicar as alterações para todos" [ref=e115] [cursor=pointer]
+  - contentinfo [ref=e29]:
+    - generic [ref=e30]:
+      - link "PlaceTech, voltar ao site" [ref=e31] [cursor=pointer]:
+        - /url: index-v2.html
+        - generic [ref=e32]: Place
+        - strong [ref=e33]: Tech
+      - paragraph [ref=e34]: Área local de preparação dos logos
+      - link "Voltar ao site" [ref=e35] [cursor=pointer]:
+        - /url: index-v2.html

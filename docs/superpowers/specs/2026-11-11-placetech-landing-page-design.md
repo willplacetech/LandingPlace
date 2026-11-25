@@ -24,7 +24,7 @@ Criar uma página institucional/portfólio responsiva para apresentar as soluç�
    - Notebooks: diferentes marcas e configurações para uso diário, renovação de parque e home office corporativo.
    - Celulares: diferentes marcas e faixas de preço para equipes comerciais, comunicação corporativa e gestão de aparelhos.
    - Acessórios: teclados, mouses, headsets, cabeamento, suportes e monitores.
-5. **Clientes:** carrossel automático em loop infinito, ocupando toda a largura da tela, com os seis logos incluídos na apresentação: ANDRITZ, Palmeiras, Engemon, Renault Brasil, ampm e Santos FC. Não oferecer controle de pausa nem pausar ao passar o mouse; manter a animação do carrossel mesmo com movimento reduzido e evitar criar novos nomes, métricas ou depoimentos.
+5. **Clientes:** carrossel automático em loop infinito, ocupando toda a largura da tela, com os seis logos incluídos na apresentação (ANDRITZ, Palmeiras, Engemon, Renault Brasil, ampm e Santos FC) e Vale e Petrobras, solicitados pelo usuário. Não oferecer controle de pausa nem pausar ao passar o mouse; manter a animação do carrossel mesmo com movimento reduzido e evitar criar outros nomes, métricas ou depoimentos.
 6. **Contato e rodapé:** CTA destacado, telefone `(11) 91597-1190`, e-mail `vendas@placotech.com.br` e Instagram `@placotechh`, com links funcionais para os respectivos canais.
 
 ## Ação de contato
@@ -33,19 +33,21 @@ Dar destaque a uma conversa pelo WhatsApp usando o telefone informado na apresen
 
 ## Implementação prevista
 
-- Página estática em `index.html`, com HTML, CSS e JavaScript no próprio arquivo, sem framework ou dependências de runtime.
+- Página pública estática em `index.html`, sem framework ou dependências de runtime; `index-v2.html` permanece inalterado. O manifesto do carrossel fica em `assets/client-logos.json`.
+- O carrossel de `index.html` renderiza o manifesto e mantém uma lista estática de fallback. O painel `admin.html` usa senha local como barreira casual, normaliza uploads e permite reordenar logos; a exportação do JSON e o redeploy são manuais.
 - Layout responsivo, com navegação por âncoras e menu utilizável em telas pequenas.
-- JavaScript limitado a iniciar a animação do carrossel; sem JavaScript, apresentar a lista de clientes de forma estática e completa.
+- JavaScript local para carregar o manifesto e iniciar a animação; sem JavaScript, apresentar a lista de clientes de forma estática e completa.
 - Conteúdo em português brasileiro, com semântica HTML, foco visível, links distinguíveis e contraste adequado.
 - Não incluir formulários sem destino funcional, preços, promessas, logos ou provas sociais que não constem na apresentação.
 
 ## Critérios de aceitação
 
-- Em desktop e mobile, a página apresenta os blocos acima sem rolagem horizontal e com navegação e CTAs operáveis.
+- Em desktop e mobile, `index.html` apresenta os blocos acima sem rolagem horizontal e com navegação e CTAs operáveis.
 - Telefone, e-mail e Instagram correspondem aos dados da apresentação; o CTA de WhatsApp usa o telefone formatado com código do Brasil.
-- Os seis grupos de soluções, diferenciais e seis logos de clientes do PDF estão representados sem inventar características comerciais.
+- Os seis grupos de soluções, diferenciais, seis logos de clientes do PDF e os logos Vale e Petrobras solicitados estão representados sem inventar características comerciais.
 - Carrossel ocupa toda a largura da tela e roda em loop infinito, sem controle de pausa ou pausa por hover, inclusive com movimento reduzido ativo.
 - O documento pode ser aberto diretamente como arquivo HTML sem instalação de pacotes ou servidor.
+- O painel requer HTTP(S) para carregar o manifesto; a senha e o rascunho ficam no armazenamento local do navegador e não protegem nem atualizam o site publicado.
 - Verificar HTML/JS e abrir a página no navegador em larguras desktop e mobile; confirmar navegação, destinos de contato e ausência de overflow horizontal.
 
 ## Premissas e limites

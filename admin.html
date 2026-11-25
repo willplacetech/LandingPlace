@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101113">
+  <meta name="description" content="Painel local para preparar e exportar logotipos do carrossel PlaceTech.">
+  <title>Área administrativa | PlaceTech</title>
+  <link rel="icon" type="image/webp" href="assets/placetech-mark.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/admin.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="index.html" aria-label="PlaceTech, voltar ao site">
+        <img class="brand-mark" src="assets/placetech-mark.webp" alt="" width="435" height="495">
+        <span>Place</span><strong>Tech</strong>
+      </a>
+      <a class="admin-return" href="index.html">Voltar ao site</a>
+    </div>
+  </header>
+
+  <main class="admin-page" id="conteudo">
+    <div class="container admin-shell">
+      <header class="admin-intro">
+        <h1>Gerenciar logotipos</h1>
+        <p>Prepare novas marcas para o carrossel da PlaceTech. As imagens são ajustadas para um mesmo espaço visual sem distorcer o original.</p>
+      </header>
+
+      <aside class="admin-notice" aria-label="Limite de publicação">
+        <strong>Publicação manual</strong>
+        <p>Este site não tem servidor. Depois de adicionar os logos, baixe o manifesto JSON, substitua <code>assets/client-logos.json</code> no projeto e publique o site novamente. O rascunho local aparece apenas neste navegador.</p>
+      </aside>
+
+      <section class="admin-section" id="auth-section" aria-labelledby="access-title">
+        <h2 id="access-title">Acesso do administrador</h2>
+        <p class="admin-copy" id="access-help">No primeiro acesso, crie uma senha para este navegador. Ela não é enviada nem salva no código do site.</p>
+
+        <form class="admin-auth-form" id="setup-form" hidden>
+          <label for="setup-password">Criar senha</label>
+          <input id="setup-password" name="password" type="password" minlength="8" autocomplete="new-password" required>
+          <label for="setup-confirmation">Confirmar senha</label>
+          <input id="setup-confirmation" name="confirmation" type="password" minlength="8" autocomplete="new-password" required>
+          <button class="admin-button" type="submit">Criar senha e continuar</button>
+        </form>
+
+        <form class="admin-auth-form" id="login-form" hidden>
+          <label for="login-password">Senha</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+          <button class="admin-button" type="submit">Entrar no painel</button>
+        </form>
+        <p class="admin-status" id="auth-status" role="status" aria-live="polite"></p>
+        <p class="admin-security-note">A senha é uma barreira casual, não uma autenticação segura: o HTML/JavaScript do site é público e pode ser inspecionado ou alterado.</p>
+      </section>
+
+      <section class="admin-section admin-editor" id="editor" aria-labelledby="editor-title" hidden>
+        <header class="admin-editor-heading">
+          <div>
+            <h2 id="editor-title">Catálogo de clientes</h2>
+            <p class="admin-copy">Adicione até 30 marcas. O novo logo ficará no rascunho local e no manifesto exportado.</p>
+          </div>
+          <p class="admin-count" id="logo-count" aria-live="polite"></p>
+        </header>
+
+        <div class="admin-columns">
+          <form class="logo-form" id="logo-form">
+            <h3>Adicionar logo</h3>
+            <label for="logo-name">Nome da empresa</label>
+            <input id="logo-name" name="name" type="text" maxlength="80" autocomplete="organization" required>
+            <label for="logo-file">Arquivo da imagem</label>
+            <input id="logo-file" name="logo" type="file" accept="image/png,image/jpeg,image/webp" required>
+            <p class="admin-help">PNG, JPG ou WebP · até 8 MB. A imagem será ajustada para 1200 × 420 px, mantendo a proporção.</p>
+            <div class="logo-preview" id="logo-preview" hidden>
+              <img id="preview-image" alt="Prévia do logo selecionado" width="145" height="72">
+            </div>
+            <button class="admin-button" id="add-logo" type="submit">Adicionar ao catálogo</button>
+          </form>
+
+          <div class="logo-catalog">
+            <h3>Logos incluídos</h3>
+            <ul class="logo-list" id="logo-list" aria-label="Logos no catálogo"></ul>
+          </div>
+        </div>
+
+        <div class="admin-actions">
+          <button class="admin-button" id="download-manifest" type="button" disabled>Baixar manifesto JSON</button>
+          <button class="admin-button admin-button-secondary" id="logout" type="button">Sair do painel</button>
+        </div>
+        <p class="admin-status" id="editor-status" role="status" aria-live="polite"></p>
+        <details class="admin-publish-details">
+          <summary>Como publicar as alterações para todos</summary>
+          <p>Baixe o arquivo, coloque-o no projeto no caminho <code>assets/client-logos.json</code> e publique o site. Os logos enviados ficam incorporados ao JSON exportado; não é necessário copiar arquivos adicionais.</p>
+        </details>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="wordmark" href="index.html" aria-label="PlaceTech, voltar ao site">
+        <img class="brand-mark" src="assets/placetech-mark.webp" alt="" width="435" height="495">
+        <span>Place</span><strong>Tech</strong>
+      </a>
+      <p>Área local de preparação dos logos</p>
+      <a href="index.html">Voltar ao site</a>
+    </div>
+  </footer>
+  <script src="assets/client-admin.js" defer></script>
+</body>
+</html>

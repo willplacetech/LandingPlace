@@ -1,0 +1,9 @@
+[      17ms] [ERROR] Failed to load resource: net::ERR_FILE_NOT_FOUND @ file:///C:/static/js/bundle.js:1
+[     330ms] [ERROR] Failed to load resource: net::ERR_FILE_NOT_FOUND @ file:///cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5c09a101df7a4a4:1
+[     441ms] [ERROR] Access to XMLHttpRequest at 'file:///C:/cdn-cgi/rum?' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: chrome, chrome-extension, chrome-untrusted, data, http, https, isolated-app. @ file:///C:/Users/user/Documents/Pagina%20Placetech/indexPuro.html:1
+[     442ms] [ERROR] Failed to load resource: net::ERR_FAILED @ file:///C:/cdn-cgi/rum?:1
+[     443ms] [ERROR] Failed to load resource: net::ERR_FILE_NOT_FOUND @ file:///C:/favicon.svg:1
+[   21142ms] TypeError: Failed to execute 'sendBeacon' on 'Navigator': Beacons are only supported over HTTP(S).
+    at a (https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092:1:588)
+    at gt (https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092:1:28245)
+    at HTMLDocument.<anonymous> (https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092:1:26426)

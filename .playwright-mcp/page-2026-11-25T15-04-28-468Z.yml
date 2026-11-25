@@ -1,0 +1,261 @@
+- generic [active] [ref=e1]:
+  - link "Pular para o conteúdo" [ref=e2] [cursor=pointer]:
+    - /url: "#conteudo"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "PlaceTech, início" [ref=e5] [cursor=pointer]:
+        - /url: "#inicio"
+        - generic [ref=e6]: Place
+        - strong [ref=e7]: Tech
+      - navigation "Navegação principal" [ref=e8]:
+        - link "Soluções" [ref=e9] [cursor=pointer]:
+          - /url: "#solucoes"
+        - link "A PlaceTech" [ref=e10] [cursor=pointer]:
+          - /url: "#empresa"
+        - link "Clientes" [ref=e11] [cursor=pointer]:
+          - /url: "#clientes"
+        - link "Contato" [ref=e12] [cursor=pointer]:
+          - /url: "#contato"
+        - link "Fale com a equipe" [ref=e13] [cursor=pointer]:
+          - /url: https://wa.me/5511915971190?text=Ol%C3%A1%2C%20PlaceTech!
+  - main [ref=e16]:
+    - region "Tecnologia que mantém seu negócio em movimento." [ref=e17]:
+      - generic [ref=e18]:
+        - heading "Tecnologia que mantém seu negócio em movimento." [level=1] [ref=e19]
+        - paragraph [ref=e20]: Representação comercial em São Paulo/SP, com atendimento próximo e soluções sob medida.
+        - generic [ref=e21]:
+          - link "Fale com a PlaceTech" [ref=e22] [cursor=pointer]:
+            - /url: https://wa.me/5511915971190?text=Ol%C3%A1%2C%20PlaceTech!
+          - link "Conheça as soluções" [ref=e25] [cursor=pointer]:
+            - /url: "#solucoes"
+      - img "Equipe de atendimento com headsets trabalhando em notebooks." [ref=e27]
+    - region "Portfólio e linhas de produto" [ref=e28]:
+      - region "Do servidor ao acessório, tudo o que sua operação precisa." [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e31]:
+            - paragraph [ref=e32]: Nosso portfólio
+            - heading "Do servidor ao acessório, tudo o que sua operação precisa." [level=2] [ref=e33]: Do servidor ao acessório,tudo o que sua operação precisa.
+          - generic [ref=e34]:
+            - article [ref=e35]:
+              - generic [ref=e36]:
+                - img "Servidores" [ref=e37]
+                - generic [aria-hidden] [ref=e38]: "01"
+              - generic [ref=e39]:
+                - heading "Servidores" [level=3] [ref=e40]
+                - paragraph [ref=e41]: Alta performance e confiabilidade
+            - article [ref=e42]:
+              - generic [ref=e43]:
+                - img "Notebooks" [ref=e44]
+                - generic [aria-hidden] [ref=e45]: "02"
+              - generic [ref=e46]:
+                - heading "Notebooks" [level=3] [ref=e47]
+                - paragraph [ref=e48]: Mobilidade para produtividade
+            - article [ref=e49]:
+              - generic [ref=e50]:
+                - img "Celulares" [ref=e51]
+                - generic [aria-hidden] [ref=e52]: "03"
+              - generic [ref=e53]:
+                - heading "Celulares" [level=3] [ref=e54]
+                - paragraph [ref=e55]: Conectividade e desempenho
+            - article [ref=e56]:
+              - generic [ref=e57]:
+                - img "Acessórios" [ref=e58]
+                - generic [aria-hidden] [ref=e59]: "04"
+              - generic [ref=e60]:
+                - heading "Acessórios" [level=3] [ref=e61]
+                - paragraph [ref=e62]: Qualidade para o dia a dia
+      - region "Linhas de produto" [ref=e63]:
+        - generic [ref=e64]:
+          - paragraph [ref=e65]: Linhas de produto
+          - generic [ref=e66]:
+            - article [ref=e67]:
+              - generic [ref=e68]:
+                - img "Servidores" [ref=e69]
+                - generic [aria-hidden] [ref=e70]: "01"
+              - generic [ref=e71]:
+                - paragraph [ref=e72]: Linha 01
+                - heading "Servidores" [level=3] [ref=e73]
+                - paragraph [ref=e74]: Alta performance e confiabilidade
+                - generic "Marcas disponíveis" [ref=e75]:
+                  - img "Lenovo"
+                  - img "Dell"
+                - generic [ref=e77]:
+                  - heading "Ideal para" [level=4] [ref=e78]
+                  - list [ref=e79]:
+                    - listitem [ref=e80]: Armazenamento centralizado de arquivos e dados
+                    - listitem [ref=e81]: Sistemas ERP, CRM e aplicações internas
+                    - listitem [ref=e82]: Rotinas de backup e continuidade de negócio
+                - paragraph [ref=e83]: "Soluções sob medida: opções dimensionadas conforme porte e necessidade do cliente."
+                - link "Consultar esta linha no WhatsApp" [ref=e84] [cursor=pointer]:
+                  - /url: https://wa.me/5511915971190?text=Ol%C3%A1!%20Tenho%20interesse%20na%20linha%20Servidores%20da%20PlaceTech.%20Podemos%20conversar%3F
+            - article [ref=e85]:
+              - generic [ref=e86]:
+                - img "Conectividade e Telefonia" [ref=e87]
+                - generic [aria-hidden] [ref=e88]: "02"
+              - generic [ref=e89]:
+                - paragraph [ref=e90]: Linha 02
+                - heading "Conectividade e Telefonia" [level=3] [ref=e91]
+                - paragraph [ref=e92]: Soluções para redes de internet e comunicação
+                - generic [ref=e93]:
+                  - generic [ref=e94]:
+                    - heading "Infraestrutura de rede" [level=4] [ref=e95]
+                    - list [ref=e96]:
+                      - listitem [ref=e97]: Switches
+                      - listitem [ref=e98]: Patch cords
+                      - listitem [ref=e99]: Patch panels
+                      - listitem [ref=e100]: Hubs
+                  - generic [ref=e101]:
+                    - heading "Conectividade" [level=4] [ref=e102]
+                    - list [ref=e103]:
+                      - listitem [ref=e104]: Roteadores
+                      - listitem [ref=e105]: Repetidores
+                  - generic [ref=e106]:
+                    - heading "Telefonia" [level=4] [ref=e107]
+                    - list [ref=e108]:
+                      - listitem [ref=e109]: Linhas domésticas
+                      - listitem [ref=e110]: Linhas empresariais
+                - paragraph [ref=e111]: "Soluções sob medida: opções dimensionadas conforme porte e necessidade do cliente."
+                - link "Consultar esta linha no WhatsApp" [ref=e112] [cursor=pointer]:
+                  - /url: https://wa.me/5511915971190?text=Ol%C3%A1!%20Tenho%20interesse%20na%20linha%20Conectividade%20e%20Telefonia%20da%20PlaceTech.%20Podemos%20conversar%3F
+            - article [ref=e113]:
+              - generic [ref=e114]:
+                - img "Mobilidade Premium" [ref=e115]
+                - generic [aria-hidden] [ref=e116]: "03"
+              - generic [ref=e117]:
+                - paragraph [ref=e118]: Linha 03
+                - heading "Mobilidade Premium" [level=3] [ref=e119]
+                - paragraph [ref=e120]: Linhas Air e Pro, novas ou seminovas com garantia
+                - generic "Marcas disponíveis" [ref=e121]:
+                  - img "Apple"
+                - generic [ref=e123]:
+                  - heading "Perfeitos para" [level=4] [ref=e124]
+                  - list [ref=e125]:
+                    - listitem [ref=e126]: "Times criativos: design, vídeo e áudio"
+                    - listitem [ref=e127]: Profissionais em mobilidade constante
+                    - listitem [ref=e128]: Empresas integradas ao ecossistema Apple
+                - link "Consultar esta linha no WhatsApp" [ref=e129] [cursor=pointer]:
+                  - /url: https://wa.me/5511915971190?text=Ol%C3%A1!%20Tenho%20interesse%20na%20linha%20Mobilidade%20Premium%20da%20PlaceTech.%20Podemos%20conversar%3F
+            - article [ref=e130]:
+              - generic [ref=e131]:
+                - img "Notebooks corporativos" [ref=e132]
+                - generic [aria-hidden] [ref=e133]: "04"
+              - generic [ref=e134]:
+                - paragraph [ref=e135]: Linha 04
+                - heading "Notebooks corporativos" [level=3] [ref=e136]
+                - paragraph [ref=e137]: Diversas marcas e configurações confiáveis para uso diário
+                - generic "Marcas disponíveis" [ref=e138]:
+                  - img "Lenovo"
+                  - img "Dell"
+                  - img "Acer"
+                - generic [ref=e140]:
+                  - heading "Ideal para" [level=4] [ref=e141]
+                  - list [ref=e142]:
+                    - listitem [ref=e143]: Equipes administrativas e operacionais
+                    - listitem [ref=e144]: Renovação de parque tecnológico
+                    - listitem [ref=e145]: Home office corporativo
+                - link "Consultar esta linha no WhatsApp" [ref=e146] [cursor=pointer]:
+                  - /url: https://wa.me/5511915971190?text=Ol%C3%A1!%20Tenho%20interesse%20na%20linha%20Notebooks%20corporativos%20da%20PlaceTech.%20Podemos%20conversar%3F
+            - article [ref=e147]:
+              - generic [ref=e148]:
+                - img "Celulares" [ref=e149]
+                - generic [aria-hidden] [ref=e150]: "05"
+              - generic [ref=e151]:
+                - paragraph [ref=e152]: Linha 05
+                - heading "Celulares" [level=3] [ref=e153]
+                - paragraph [ref=e154]: Diferentes marcas e faixas de preço
+                - generic "Marcas disponíveis" [ref=e155]:
+                  - img "Apple"
+                  - img "Samsung"
+                  - img "Xiaomi Mi"
+                  - img "Motorola"
+                - generic [ref=e157]:
+                  - heading "Ideal para" [level=4] [ref=e158]
+                  - list [ref=e159]:
+                    - listitem [ref=e160]: Equipes comerciais e externas
+                    - listitem [ref=e161]: Comunicação corporativa
+                    - listitem [ref=e162]: Gestão facilitada de frotas de aparelhos
+                - link "Consultar esta linha no WhatsApp" [ref=e163] [cursor=pointer]:
+                  - /url: https://wa.me/5511915971190?text=Ol%C3%A1!%20Tenho%20interesse%20na%20linha%20Celulares%20da%20PlaceTech.%20Podemos%20conversar%3F
+            - article [ref=e164]:
+              - generic [ref=e165]:
+                - img "Escritório completo" [ref=e166]
+                - generic [aria-hidden] [ref=e167]: "06"
+              - generic [ref=e168]:
+                - paragraph [ref=e169]: Linha 06
+                - heading "Escritório completo" [level=3] [ref=e170]
+                - paragraph [ref=e171]: Acessórios para o dia a dia
+                - generic "Marcas disponíveis" [ref=e172]:
+                  - img "Acer"
+                  - img "Logitech"
+                  - img "Dell"
+                - generic [ref=e174]:
+                  - heading "No kit" [level=4] [ref=e175]
+                  - list [ref=e176]:
+                    - listitem [ref=e177]: Teclados, mouses e headsets
+                    - listitem [ref=e178]: Cabeamento de conexões
+                    - listitem [ref=e179]: Suportes
+                    - listitem [ref=e180]: Monitor
+                - link "Consultar esta linha no WhatsApp" [ref=e181] [cursor=pointer]:
+                  - /url: https://wa.me/5511915971190?text=Ol%C3%A1!%20Tenho%20interesse%20na%20linha%20Escrit%C3%B3rio%20completo%20da%20PlaceTech.%20Podemos%20conversar%3F
+    - region "Tecnologia com atendimento próximo." [ref=e182]:
+      - generic [ref=e183]:
+        - generic [ref=e184]:
+          - heading "Tecnologia com atendimento próximo." [level=2] [ref=e185]
+          - paragraph [ref=e186]: A PlaceTech é uma empresa de soluções em tecnologia e representação comercial em São Paulo/SP, atendendo empresas e profissionais com foco em qualidade e confiança.
+        - list "Diferenciais PlaceTech" [ref=e187]:
+          - listitem [ref=e188]: Atendimento consultivo e personalizado
+          - listitem [ref=e189]: Agilidade na entrega e no suporte
+          - listitem [ref=e190]: Produtos de qualidade e garantia
+          - listitem [ref=e191]: Suporte pós-venda
+    - region "Empresas que confiam na PlaceTech." [ref=e192]:
+      - generic [ref=e194]:
+        - heading "Empresas que confiam na PlaceTech." [level=2] [ref=e195]
+        - paragraph [ref=e196]: Marcas apresentadas no portfólio da PlaceTech.
+      - region "Clientes PlaceTech" [ref=e197]:
+        - list "Logos de clientes" [ref=e199]:
+          - listitem [ref=e200]:
+            - generic [ref=e201]: Andritz
+          - listitem [ref=e202]:
+            - generic [ref=e203]: Palmeiras
+          - listitem [ref=e204]:
+            - generic [ref=e205]: Engemon
+          - listitem [ref=e206]:
+            - generic [ref=e207]: Renault Brasil
+          - listitem [ref=e208]:
+            - generic [ref=e209]: ampm
+          - listitem [ref=e210]:
+            - generic [ref=e211]: Santos FC
+          - listitem [ref=e212]:
+            - generic [ref=e213]: Vale
+          - listitem [ref=e214]:
+            - generic [ref=e215]: Petrobras
+    - region "Vamos construir juntos o próximo passo." [ref=e216]:
+      - generic [ref=e217]:
+        - generic [ref=e218]:
+          - heading "Vamos construir juntos o próximo passo." [level=2] [ref=e219]
+          - paragraph [ref=e220]: Fale com a PlaceTech e encontre a tecnologia certa para o seu negócio.
+          - link "Chamar no WhatsApp" [ref=e222] [cursor=pointer]:
+            - /url: https://wa.me/5511915971190?text=Ol%C3%A1%2C%20PlaceTech!
+        - generic "Canais de contato" [ref=e225]:
+          - link "(11) 91597-1190" [ref=e226] [cursor=pointer]:
+            - /url: tel:+5511915971190
+          - link "vendas@placetech.com.br" [ref=e227] [cursor=pointer]:
+            - /url: mailto:vendas@placetech.com.br
+          - link "@placetechh no Instagram" [ref=e228] [cursor=pointer]:
+            - /url: https://www.instagram.com/placetechh/
+  - contentinfo [ref=e229]:
+    - generic [ref=e230]:
+      - link "PlaceTech, voltar ao início" [ref=e231] [cursor=pointer]:
+        - /url: "#inicio"
+        - generic [ref=e232]: Place
+        - strong [ref=e233]: Tech
+      - paragraph [ref=e234]: Soluções em tecnologia, São Paulo/SP
+      - generic [ref=e235]:
+        - link "Telefone" [ref=e236] [cursor=pointer]:
+          - /url: tel:+5511915971190
+        - link "E-mail" [ref=e237] [cursor=pointer]:
+          - /url: mailto:vendas@placetech.com.br
+        - link "Área administrativa" [ref=e238] [cursor=pointer]:
+          - /url: admin.html
+        - link "Instagram" [ref=e239] [cursor=pointer]:
+          - /url: https://www.instagram.com/placetechh/

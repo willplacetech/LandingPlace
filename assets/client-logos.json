@@ -1,12 +1,12 @@
 {
   "version": 1,
   "logos": [
-    { "name": "Andritz", "src": "assets/client-logos/andritz.webp" },
-    { "name": "Palmeiras", "src": "assets/client-logos/palmeiras.webp" },
-    { "name": "Engemon", "src": "assets/client-logos/engemon.webp" },
-    { "name": "Renault Brasil", "src": "assets/client-logos/renault-brasil.webp" },
+    { "name": "Andritz", "src": "assets/client-logos/andritz-hq.webp" },
+    { "name": "Palmeiras", "src": "assets/client-logos/palmeiras-hq.png" },
+    { "name": "Engemon", "src": "assets/client-logos/engemon-hq.webp" },
+    { "name": "Renault Brasil", "src": "assets/client-logos/renault-brasil-hq.svg" },
     { "name": "ampm", "src": "assets/client-logos/ampm.webp" },
-    { "name": "Santos FC", "src": "assets/client-logos/santos-fc.webp" },
+    { "name": "Santos FC", "src": "assets/client-logos/santos-fc-hq.png" },
     { "name": "Vale", "src": "assets/client-logos/vale.png" },
     { "name": "Petrobras", "src": "assets/client-logos/petrobras.svg" }
   ]

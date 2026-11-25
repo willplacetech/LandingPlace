@@ -154,12 +154,12 @@ test("shows all client logos in an accessible automatic loop", () => {
   assert.doesNotMatch(html, /carousel-toggle|is-paused|animation-play-state:\s*paused/);
   assert.doesNotMatch(html, /<img src="assets\/client-logos\/[^"]+"[^>]*loading="lazy"/);
   for (const [client, extension] of [
-    ["andritz", "webp"],
-    ["palmeiras", "webp"],
-    ["engemon", "webp"],
-    ["renault-brasil", "webp"],
+    ["andritz-hq", "webp"],
+    ["palmeiras-hq", "png"],
+    ["engemon-hq", "webp"],
+    ["renault-brasil-hq", "svg"],
     ["ampm", "webp"],
-    ["santos-fc", "webp"],
+    ["santos-fc-hq", "png"],
     ["vale", "png"],
     ["petrobras", "svg"],
   ]) {
@@ -180,8 +180,15 @@ test("keeps the client loop infinite with reduced motion enabled", () => {
 });
 
 test("preloads and distributes client logos across wide viewports before animation", () => {
-  for (const client of ["andritz", "palmeiras", "engemon", "renault-brasil", "ampm", "santos-fc"]) {
-    assert.match(html, new RegExp(`<link\\b[^>]*href="assets/client-logos/${client}\\.webp"[^>]*>`));
+  for (const [client, extension] of [
+    ["andritz-hq", "webp"],
+    ["palmeiras-hq", "png"],
+    ["engemon-hq", "webp"],
+    ["renault-brasil-hq", "svg"],
+    ["ampm", "webp"],
+    ["santos-fc-hq", "png"],
+  ]) {
+    assert.match(html, new RegExp(`<link\\b[^>]*href="assets/client-logos/${client}\\.${extension}"[^>]*>`));
   }
   assert.match(html, /<link rel="preload" as="image" href="assets\/client-logos\/vale\.png"/);
   assert.match(html, /<link rel="preload" as="image" href="assets\/client-logos\/petrobras\.svg"/);
@@ -197,6 +204,12 @@ test("keeps reduced-motion styles and the page self-contained", () => {
   assert.match(html, /<script src="assets\/client-logos\.js" defer><\/script>/);
   assert.doesNotMatch(html, /<script[^>]+src="https?:/i);
   assert.doesNotMatch(html, /transition:\s*all\b/i);
+});
+
+test("keeps the refreshed logos exclusive to the main page", () => {
+  for (const page of [htmlV2, pureHtml]) {
+    assert.doesNotMatch(page, /assets\/client-logos\/(?:andritz|palmeiras|engemon|renault-brasil|santos-fc)-hq\./);
+  }
 });
 
 test("provides an independent second version with navigation and verified contacts", () => {
